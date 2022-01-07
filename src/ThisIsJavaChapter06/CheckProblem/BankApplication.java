@@ -50,22 +50,21 @@ public class BankApplication {
             if (e.getAno().equals(Ano)) {
                 e.setBalance(e.getBalance() - withdrawMoney);
                 System.out.println("출금이 성공되었습니다.");
+                break;
             } else {
                 System.out.println("출금 실패");
+                break;
             }
         }
 
     }
 
     private void accountList() {
-        for (Account2 e : accountArray
-        ) {
-            try{
-                {
-                    System.out.println(e.getAno() + "    " + e.getOwner() + "   " + e.getBalance());
-                }
-            }catch (Exception q){
+        for (Account2 e : accountArray) {
+            if (e == null) {
+                break;
             }
+            System.out.println(e.getAno() + "\t" + e.getOwner() + "\t" + e.getBalance());
         }
     }
 
@@ -77,11 +76,13 @@ public class BankApplication {
         int i = 0;
         for (Account2 e : accountArray
         ) {
-            if (e.getOwner().equals(Ano)) {
+            if (e.getAno().equals(Ano)) {
                 e.setBalance(e.getBalance() + addMoney);
                 System.out.println("결과: 예금이 생공되었습니다.");
+                break;
             } else {
                 System.out.println("잘못된계좌번호");
+                break;
             }
 
         }
@@ -99,10 +100,13 @@ public class BankApplication {
         System.out.print("초기입금액: ");
         int balance = scanner.nextInt();
 
-        int i = 0;
-        accountArray[i] = new Account2(accountNum, owner, balance);
-        i++;
-        System.out.println("결과: 계좌가 생성되었습니다.");
+        for (int i = 0; i < accountArray.length; i++) {
+            if (accountArray[i] == null) {
+                accountArray[i] = new Account2(accountNum, owner, balance);
+                System.out.println("결과: 계좌가 생성되었습니다.");
+                break;
+            }
+        }
 
     }
 }
