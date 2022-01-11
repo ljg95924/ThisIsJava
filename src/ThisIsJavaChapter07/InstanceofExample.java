@@ -6,7 +6,7 @@ public class InstanceofExample {
             InstanceofChild child = (InstanceofChild) parent;
             System.out.println("method1 - Child로 변환 성공");
         } else {
-            System.out.println("method1 - Child로 변환 실패");
+            System.out.println("method1 - Child로 변환 실패, 그대로 진행했으면 ClassCastException 발생");
         }
     }
 
