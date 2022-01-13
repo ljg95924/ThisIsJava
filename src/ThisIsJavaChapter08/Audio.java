@@ -2,6 +2,7 @@ package ThisIsJavaChapter08;
 
 public class Audio implements RemoteControl {
     private int volume;
+    private boolean mute;
 
     @Override
     public void turnOn() {
@@ -23,5 +24,16 @@ public class Audio implements RemoteControl {
             this.volume = volume;
         }
         System.out.println("현재 Audio 볼륨: " + volume);
+    }
+
+    @Override
+    public void setMute(boolean mute) {
+        this.mute = mute;
+        if(mute){
+            System.out.println("Audio 무음 처리");
+        }
+        else {
+            System.out.println("Audio 무음 해제");
+        }
     }
 }
