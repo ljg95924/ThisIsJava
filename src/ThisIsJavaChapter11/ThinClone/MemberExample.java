@@ -1,4 +1,4 @@
-package ThisIsJavaChapter11.Clone;
+package ThisIsJavaChapter11.ThinClone;
 
 public class MemberExample {
     public static void main(String[] args) {
