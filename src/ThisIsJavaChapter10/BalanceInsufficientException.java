@@ -1,2 +1,10 @@
-package ThisIsJavaChapter10;public class BalanceInsufficientException {
+package ThisIsJavaChapter10;
+
+public class BalanceInsufficientException extends Exception {
+    public BalanceInsufficientException() {
+    }
+
+    public BalanceInsufficientException(String message) {
+        super(message);
+    }
 }
