@@ -8,7 +8,6 @@ public class Key {
     public Key(int number) {
         this.number = number;
     }
-
     @Override
     public boolean equals(Object o) {
         if (o instanceof Key) {

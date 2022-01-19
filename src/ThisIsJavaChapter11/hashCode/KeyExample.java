@@ -7,7 +7,6 @@ public class KeyExample {
         HashMap<Key, String> hashMap = new HashMap<Key, String>();
 
         hashMap.put(new Key(1),"홍길동");
-
         System.out.println(hashMap.get(new Key(1)));
 
     }
