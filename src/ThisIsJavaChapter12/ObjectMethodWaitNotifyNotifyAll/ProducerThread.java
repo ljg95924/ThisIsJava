@@ -9,9 +9,11 @@ public class ProducerThread extends Thread {
 
     @Override
     public void run() {
-        for (int i = 1; i <= 3; i++) {
+       for (int i = 1; i <= 3; i++) {
             String data = "Data-" + i;
             dataBox.setData(data);
+            System.out.println("Producer for문");
         }
+       System.out.println("producer run끝");
     }
 }

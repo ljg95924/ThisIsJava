@@ -11,6 +11,8 @@ public class ConsumerThread extends Thread {
     public void run() {
         for(int i=1; i<=3; i++){
             String data= dataBox.getData();
+            System.out.println("Consumer for문");
         }
+        System.out.println("Consumer run끝");
     }
 }

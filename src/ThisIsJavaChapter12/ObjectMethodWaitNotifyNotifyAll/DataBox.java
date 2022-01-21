@@ -31,5 +31,6 @@ public class DataBox {
         this.data = data;
         System.out.println("생성한 데이터: " + data);
         notify();
+        System.out.println("9999");
     }
 }
