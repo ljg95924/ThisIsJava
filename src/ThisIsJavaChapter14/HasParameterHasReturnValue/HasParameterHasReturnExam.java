@@ -18,6 +18,5 @@ public class HasParameterHasReturnExam {
         fi = (x, y) -> x + y;
         System.out.println(fi.method(2, 5));
 
-
     }
 }
