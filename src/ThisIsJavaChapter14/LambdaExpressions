@@ -34,7 +34,7 @@ Runnable runnable = () -> {};
   이러한 인터페스를 함수적 인터페이스라고 한다. 함수적 인터페이스를 작성할 때 두 개 이상의 추상 메소드가 선언되지 않도록 컴파일러가
   체킹해주는 기능이 있는데 바로 인터페이스 선언 시 @FunctionalInterface 어노테이션을 붙이면 된다.
 
- 매개 변수와 리턴값이 없는 람다식
+ 1. 매개 변수와 리턴값이 없는 람다식
   매개변수와 리턴값이 없는 추상 메소드를 가진 함수적 인터페이스가 있다고 가정해보자.
   public interface FunctionalInterface{
     public void method();
@@ -44,8 +44,189 @@ Runnable runnable = () -> {};
   람다식이 대입된 인터페이스의 참조 변수는 다음과 같이 method()를 호출할 수 있다. method()호출은 람다식의 중괄호{}를 실행시킨다.
   fi.method();
 
- 매개 변수가 있는 람다식
+ 2. 매개 변수가 있는 람다식
   아래와 같이 매개 변수가 있고 리턴값이 없는 추상 메소드를 가진 함수적 인터페이스가 있다고 가정
   public interface FunctionalInterface{
     public void method(int x);
   }
+  이 인터페이스를 타겟 타입으로 갖는 람다식은 다음과 같은 형태로 작성해야 한다.
+  MyFunctionalInterface fi = (x) -> {}
+
+ 3. 리턴값이 있는 람다식
+  public interface FunctionalInterface{
+    public int method(int x, int y);
+  }
+  MyFunctionalInterface fi = (x, y) -> { .. return 값}
+
+클래스 멤버와 로컬변수 사용
+ 람다식의 실행 블록에는 클래스의 멤버(필드와 메소드) 및 로컬 변수를 사용할 수 있다. 클래스의 멤버는 제약없이 사용할 수 있지만
+ 로컬 변수는 제약 사항이 따른다.
+
+ 클래스의 멤버 사용
+  람다식의 실행블록에는 클래스의 멤버인 필드와 메소드를 제약 사항없이 사용할 수 있다. 하지만 this 키워드를 사용할때는 주의가 필요하다.
+  일반적으로 익명객체 내부에서 this는 익명객체의 참조이지만, 람다식에서 this는 내부적으로 생성되는 익명객체의 참조가 아니라
+  람다식을 실행한 객체의 참조이다.
+
+ 로컬변수 사용
+  람다식은 메소드 내부에서 주로 작성되기 때문에 로컬 익명구현객체를 생성시킨다고 봐야한다.
+  람다식에서 바깥클래스의 필드나 메소드는 제한없이 사용할 수 있으나, 메소드의 매개변수 또는 로컯변수를 사용하면
+  이 두 변수는 final 특성을 갖는다.
+
+표준 API의 함수적 인터페이스
+ 자바에서 제공되는 표준API에서 한 개의 추상 메소드를 가지는 인터페이스들은 모두 람다식을 이용해서 익명구현객체로 표현이 가능하다.
+ 자바 8부터는 빈번하게 사용되는 함수적 인터페이스는 java.util.function 표준 API 패키지로 제공한다. 이 패키지에서 제공하는 함수적
+ 인터페이스의 목적은 메소드 또는 생성자의 매개타입으로 사용되어 람다식을 대입할 수 있도록 하기 위해서다. 자바8부터 추가되거나
+ 변경된 API에서 이 함수적 인터페이스들을 매개 타입으로 많이 사용한다. java.util.function 패키지의 함수적 인터페이스는 크게
+ Consumer, Supplier, Function, Operator, Predicate로 구분된다.
+ 구분 기준은 인터페이스에 선언된 추상메소드의 매개값과 리턴값의 유무이다.
+ Consumer - 매개값있고 리턴값없음
+ Supplier - 매개값없고 리턴값있음
+ Function - 매개값있고 리턴값있음, 주로 매개값을 리턴값으로 매핑(타입변환)
+ Operator - 매개값있고 리턴값있음, 주로 맥개밧을 연산하고 결과를 리턴
+ Predicate - 매개값있고 리턴타입은 Boolean, 매개값을 조사해서 true/false를 리턴
+
+ 1. Consumer 함수적 인터페이스
+  Consumer 함수적 인터페이스의 특징은 리턴값이 없는 accept() 메소드를 가지고 있다.
+  accept() 메소드는 단지 매개값을 사용만 할 뿐 리턴값이 없다.
+  Consumer<String> consumer = t -> { t를 소비하는 실행문; };
+
+ 2. Supplier 함수적 인터페이스
+  Supplier 함수적 인터페이스는 매개변수가 없고리턴값이 있는 getXXX() 메소드를 가지고 있다.
+  이 메소드를은 실행 후 호출한 곳으로 데이터를 리턴하는 역할을 한다.
+  Supplier의 get() 메소드가 매개값을 가지지 않으므로 람다식도 ()를 사용한다.
+  Supplier<String> supplier = () -> { ...; return ...; }
+
+ 3. Function 함수적 인터페이스
+  Function 함수적 인터페이스는 매개값과 리턴값이 있는 applyXXX() 메소드를 가지고 있다.
+  이 메소드들은 매개값을 리턴값으로 매핑(타입변환)하는 역할을 한다.
+  Function<T,R> 인터페이스 - R apply(T t) 추상메소드 - 객체 T를 객체 R로 매핑
+  BiFunction<T,U,R> - R apply(T t, U u) - 객체 T와 객체 U를 객체 R로 매핑
+  IntFunction<R> - R apply(int value) - int를 객체 R로 매핑
+  ToIntFunction<T> - int applyAsInt(T t) - 객체 T를 int로 매핑
+
+  Function<T,R> 인터페이스를 타켓 타입으로 하는 람다식은 다음과 같이 작성될 수 있다.(Student 객체를 학생이름(String)으로 매핑)
+  Function<Student, String> function = t -> t.getName();
+  apply() 메소드는 매개값으로 T 객체 하나를 가지므로 람다식도 한개의 매개변수를 사용한다.
+  apply() 메소드의 리턴 타입이 R이므로 람다식 중괄호 {}의 리턴값은 R객체가 된다.
+  T가 Student 타입이고 R이 String 타입으므로 t 매개변수타입은 Student가 되고, 람다식의 중괄호{}는 String을 리턴해야한다.
+
+  ToIntFunction<T> 인터페이스를 타켓타입으로 하는 람다식
+  applyAsInt() 메소드는 매개값으로 T 객체 하나를 가지므로 람다식도 한 개의 매개 변수를 사용한다.
+  applyAsInt() 메소드의 리턴 타입이 int이므로 람다식 중괄호 {}의 리턴값은 int가 된다.
+  T가 Student 타입이므로 t 매개변수타입은 Student가 된다.
+  t.getScore()는 Student 객체의 getScore()메소드를 호출해서 학생 점수(int)를 얻는다.
+  ToIntFunction<Student> function = t -> t.getScore();
+
+ 4. Operator 함수적 인터페이스
+  Operator 함수적 인터페이스는 Function과 동일하게 매개변수와 리턴타입이 있는 applyXXX() 메소드를 가지고 있다.
+  하지만 이 메소드들은 매개값을 리턴값으로 매핑(타입변환)하는 역할보다는 매개값을 이용해서 연산을 수행한 후
+  동일한 타입으로 리턴값을 제공하는 역할을 한다.
+  BinaryOperator<T> - BiFunction<T,U,R>의 하위 인터터페이스 - T와U를 연산한 후 R을 리턴
+  IntBinaryOperator - int applyAsInt(int, int) - 두 개의 int 연산
+
+  IntBinaryOperator 인터페이스를 타켓 타입으로ㅓ 하는 람다식
+  applyAsInt() 메소드는 매개값으로 두 개의 int를 가지므로 람다식도 두 개의 int 매개변수 a와 b를 사용한다.
+  applyAsInt(0 메소드의 리턴 타입이 int 이므로 중괄호{}의 리턴값은 int가 된다.
+  IntBinaryOperator operator = (a, b) -> { ...; return int 값; }
+
+ 5. Predicate 함수적 인터페이스
+  Predicate 함수적 인터페이스는 매개 변수와 boolean 리턴값이 있는 testXXX() 메소드를 가지고 있다.
+  이 메소드들은 매개값을 조사해서 true 또는 false를 리턴하는 역할을 한다.
+  Predicate<T> - boolean test(T t) - 객체 T를 조사
+  BiPredicate<T, U> - boolean test(T t, U u) - 객체 T와 U를 비교 조사
+  IntPredicate - boolean test(int value) - int 값을 조사
+
+  Predicate<T> 인터페이스를 타겟 타입으로 하는 람다식
+  test() 메소드는 매개값으로 T 객체 하나를 가지므로 람다식도 한 개의 매개 변수를 사용한다.
+  test() 메소드의 리턴 타입이 boolean 이므로 람다식 중괄호의 리턴값은 boolean이 된다.
+  T가 Student 타입이므로 t 매개 변수 타입은 Student가 된다. t.getSex()는 Student 객체의 getSex() 메소드를 호출해서
+  남자 또는 여자를 얻는다. 다음 코드는 남학생만을 true로 리턴한다.
+  Predicate<Student> predicate = t -> t.getSex().equals("남자");
+
+ andThen()과 compose() 디폴트 메소드
+  디폴트 및 정적 메소드는 추상 메소드가 아니기 때문에 함수적 인터페이스에 선언되어도 여전히 함수적 인터페이스의 성질을 잃지 않는다.
+  java.util.function 패키지의 함수적 인터페이스는 하나 이상의 디폴트 및 정적 메소드를 가지고 있다.
+  Consumer, Function, Operator 종류의 함수적 인터페이스는 andThen()과 compose() 디폴트 메소드를 가지고 있다.
+  andThen()과 compose() 디폴트 메소드는 두 개의 함수적 인터페이스를 순차적으로 연결하고 첫번째 처리 결과를 두번째 매개값으로 제공해서
+  최종 결과값을 얻을 때 사용한다. 두 메소드의 차이점은 어떤 함수적 인터페이스부터 먼저 처리하느냐 이다.
+  인터페이스AB = 인터페이스A.andThen(인터페이스B);
+  최종결과 = 인터페이스AB.method();
+  인터페이스AB의 method()를 호출하면 우선 인터페이스A부터 처리하고 결과를 인터페이스B의 매개값으로 제공한다.
+  인터페이스B는 제공받은 매개값을 가지고 처리한 후 최종 결과를 리턴한다.
+
+  인터페이스AB = 인터페이스A.compose(인터페이스B);
+  최종결과 = 인터페이스AB.method();
+  인터페이스AB의 method()를 호출하면 우선 인터페이스B부터 처리하고 결과를 인터페이스A의 매개값으로 제공한다.
+  인터페이스A는 제공받은 매개값을 가지고 처리한 후 최종결과를 리턴한다.
+
+  Consumer의 순차적 연결
+   Consumer 종류의 함수적 인터페이스는 처리 결과를 리턴하지 않기 때문에 andThen() 디폴트 메소드는 함수적 인터페이스의 호출 순서만 정한다.
+
+  Function의 순차적 연결
+   Function과 Operator 종류의 함수적 인터페이스는 먼저 실행한 함수적 인터페이스의 결과를 다음 함수적 인터페이스의 매개값으로 넘겨주고
+   최종 처리 결과를 리턴한다.
+
+  and(), or(), negate() 디폴트 메소드와 isEqual() 정적 메소드
+   Predicate 종류의 함수적 인터페이스는 and(), or(), negate() 디폴트 메소드를 가지고 있다.
+   이 메소드들은 각각 논리 연산자인 &&, ||, ! 과 대응된다고 볼 수 있다. and() 메소드는 두 Predicate가 모두 true를 리턴하면
+   최종적으로 true를 리턴하는 Predicate를 생성한다. or()는 두 Predicate 중 하나만 true를 리턴하더라도 최종적으로 true를 리턴하는
+   Predicate를 생성한다. negate()는 원래 Predicate결과가 true이면 false로, false면 true로 리턴하는 새로운 Predicate를 생성한다.
+   isEqual() 메소드는 test() 매개값인 sourceObject와 isEqual()의 매개값인 targetObject를 java.util.Objects 클래스의 equals()의
+   매개값으로 제공하고 Objects.equals(sourceObject, targetObject)의 리턴값을 얻어 새로운 Predicate<T>를 생성한다.
+   Predicate<Object> predicate = Predicate.isEqual(targetObject);
+   boolean result = predicate.test(sourceObject);
+
+  minBy(), maxBy() 정적 메소드
+   BinaryOperator<T> 함수적 인터페이스는 minBy()와 maxBy() 정적 메소드를 제공한다.
+   이 두 메소드는 매개값으로 제공되는 Comparator를 이용해서 최대 T와 최소 T를 얻는 BinaryOperator<T>를 리턴한다.
+   BinaryOperator<T> 리턴타입 - minBy(Comparator<? super T> comparator) 정적메소드
+   BinaryOperator<T> 리턴타입 - maxBy(Comparator<? super T> comparator) 정적메소드
+   Comparator<T>는 다음과 같이 선언된 함수적 인터페이스이다.
+   @FunctionalInterface
+   public interface Comparator<T>{
+    public int compare(T o1, T o2);
+   }
+   o1과 o2를 비교해서 o1이 작면 음수를, 동일하면 0을, o1이 크면 양수를 리턴한다.
+   Comparator<T>를 타겟 타입으로 하는 람다식
+   (o1, o2) -> { ...; return int값; }
+   만약 o1과 o2가 int 타입이라면 다음과 같이 Integer.compare(int, int) 메소드를 이용할 수 있다.
+   (o1, o2) -> Integer.compare(o1, o2);
+
+메소드 참조
+ 메소드 참조(Method References)는 말 그대로 메소드를 참조해서 매개 변수의 정보 및 리턴 타입을 알아내어,
+ 람다식에서 불필요한 매개변수를 제거하는 것이 목적이다. 람다식은 종종 기존 메소드를 단순히 호출만 하는 경우가 많다.
+ 예를 들어 두 개의 값을 받아 큰 수를 리턴하는 Math클래스의 max() 정적 메소드를 호출하는 람다식은 다음과 같다.
+ (left, right) -> Math.max(left, right);
+ 람다식은 단순히 두개의 값을 Math.max() 메소드의 매개값으로 전달하는 역할만 하기 때문에 다소 불편해 보인다.
+ 메소드 참조를 이용하면 매우 깔끔하게 처리할 수 있다.
+ Math :: max;
+ 메소드 참조도 람다식과 마찬가지로 인터페이스의 익명 구현 객체로 생성되므로 타겟타입인 인터페이스의 추상메소드가 어떤 매개변수를 가지고,
+ 리턴타입이 무엇인가에 따라 달라진다.
+ IntBinaryOperator 인터페이스는 두개의 int 매개값을 받아 int 값을 리턴하므로 메소드 참조를 대입할수있다.
+ IntBinaryOperator operator = Math :: max;
+ 메소드 참조는 정적 또는 인터스턴스 메소드를 참조할 수 있고 생성자 참조도 가능하다.
+
+ 정적 메소드와 인스턴스 메소드 참조
+  정적 메소드를 참조할 경우 클래스 이름 뒤에 :: 기호를 붙이고 정적 메소드 이름을 기술하면 된다.
+  클래스 :: 메소드
+  인스턴스 메소드일 경우 먼저 객체를 생성한 후에 참조 변수 뒤에 :: 기호를 붙이고 인스턴스 매소드 이름을 기술하면 된다.
+  참조변수 :: 메소드
+
+ 매개변수의 메소드 참조
+  메소드는 람다식 외부의 클래스 멤버일 수도 있고, 람다식에서 제공되는 매개 변수의 멤버일 수도 있다.
+  이전 예제는 람다식 외부의 클래스 멤버인 메소드를 호출하였다.  그러나 다음과 같이 람다식에서 제공되는 a 매개변수의 메소드를 호출해서
+  b 매개변수를 매개값으로 사용하는 경우도 있다.
+  (a, b) -> { a.instanceMethod(b); }
+  이것을 메소드 참조로 표현하면 다음과 같다. a의 클래스 이름 뒤에 :: 기호를 붙이고 메소드 이름을 기술하면 된다.
+  작성 방법은 정적 메소드 참조와 동일하지만 a의 인스턴스 메소드가 참조되므로 전혀 다른 코드가 실행된다.
+  클래스 :: instanceMethod
+
+ 생성자 참조
+  메소드 참조는 생성자 참조도 포함한다. 생성자를 참조한다는 것은 객체 생성을 의미한다.
+  단순히 메소드 호출로 구성된 람다식을 메소드 참조로 대치할 수 있듯이 단순히 객체를 생성하고 리턴하도록 구성된 람다식은 생성자 참조로 대치
+  할 수 있다. 코드를 보면 람다식은 단순히 객체 생성 후 리턴만 한다.
+  (a, b) -> { return new 클래스(a, b); }
+  이 경우 생성자 참조로 표현하면 다음과 같다. 클래스 이름 뒤에 :: 기호를 붙이고 new 연산자를 기술하면된다.
+  생성자가 오버로딩되어 여러 개가 있을 경우 컴파일러는 함수적 인터페이스의 추상 메소드와 동일한 매개 변수타입과 개수를 가지고있는 생성자를
+  찾아 실행한다.
+  클래스 :: new
