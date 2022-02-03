@@ -1,2 +1,5 @@
-package ThisIsJavaChapter14.UsingLocalVariable;public interface MyFunmctionalInterface {
+package ThisIsJavaChapter14.UsingLocalVariable;
+
+public interface MyFunctionalInterface {
+    public void method();
 }
