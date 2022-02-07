@@ -1,0 +1,345 @@
+컬렉션 프레임워크
+ 다수의 객체를 저장해 두고 필요할 때마다 꺼내어 사용하는 경우가 많다. 이 때 사용하기 좋은 것이 컬렉션이다.
+ 배열은 쉽게 생성하고 사용할 수 있지만 저장할 수 있는 객체의 수가 배열을 생성할 때 결정되기 때문에 불특정 다수의 객체를 저장하기에는
+ 문제가 있다. 배열의 또 다른 단점은 객체를 삭제했을 때 해당 인덱스가 비게 되어 새로운 객체를 저장하려면 어디가 비었는지 확인하는 코드도
+ 필요하다. 자바는 배열의 이러한 문제점들을 해결하고 널리 알려져 있는 자료구조(Data Structure)를 바탕으로 객체들을 효율적으로 추가, 삭제,
+ 검색할 수 있도록 java.util 패키지에 컬렉션과 관련된 인터페이스와 클래스들을 포함시켜 놓았다. 이들을 컬렉션 프레임워크라고 부른다.
+ 자바 컬렉션은 객체를 수집해서 저장하는 역할을 한다. 프레임워크란 사용방법을 미리 정해 놓은 라이브러리를 말한다.
+ 자바 컬렉션 프레임워크는 몇가지 인터페이스를 통해서 다양한 컬렉션 클래스를 이용할 수 있도록 하고 있다.
+
+ 컬렉션 프레임워크의 주요 인터페이스로는 List, Set, Map 이 있다.
+ ArrayList, Vector, LinkedList 는 List 인터페이스를 구현한 클래스로 List 인터페이스로 사용 가능한 컬렉션이다.
+ 마찬가지로 HashSet, TreeSet 은 Set 인터페이스를 구현한 클래스로 Set 인터페이스로 사용 가능한 컬렉션이다.
+ HashMap, Hashtable, TreeMap, Properties 는 Map 인터페이스를 구현한 클래스로 Map 인터페이스로 사용 가능한 컬렉션이다.
+ List와 Set은 객체를 추가, 삭제, 검색하는 방법에 많은 공통점이 있기 때문에 이 인터페이스들의 공통된 메소드들만 모아
+ Collection 인터페이스로 정의해 두고 있다. Map은 키와 값을 하나의 쌍으로 묶어서 관리하는 구조로 되어 있어 List, Set 과는 사용 방법이
+ 완전히 다르다. 각 인터페이스별로 사용할 수 있는 컬렉션의 특징이다.
+ Collection - List - 순서를 유지하고 저장, 중복 저장 가능
+ Collection - Set - 순서를 유지하지 않고 저장, 중복 저장 불가
+ Map - 키와 값의 쌍으로 저장, 키는 중복 저장 안됨
+
+List 컬렉션
+ List 컬렉션은 객체를 일렬로 늘어놓은 구조를 가지고 있다. 객체를 인덱스로 관리하기 때문에 객체를 저장하면 자동 인덱스가 부여되고 인덱스로
+ 객체를 검색, 삭제할 수 있는 기능을 제공한다. List 컬렉션은 객체 자체를 저장하는 것이 아니라 객체의 번지를 참조한다.
+ 동일한 객체를 중복 저장할 수도 있는데 이 경우 동일한 번지가 참조된다. null도 저장이 가능한데 이 경우 해당 인덱스는 객체를 참조하지 않는다.
+ 다음은 List 컬렉션에서 공통적으로 사용 가능한 List 인터페이스의 메소드들이다. 인덱스로 객체를 관리하기 때문에 인덱스를 매개값으로 갖는
+ 메소드가 많다.
+
+ 1. 객체 추가
+  boolean add(E e) - 주어진 객체를 맨 끝에 추가
+  void add(int index, E element) - 주어진 인덱스에 객체를 추가
+  set(int index, E element) - 주어진 인덱스에 저장된 객체를 주어진 객체로 바꿈
+
+ 2. 객체 검색
+  boolean contains(Object o) - 주어진 객체가 저장되어 있는지 여부
+  E get(int index) - 주어진 인덱스에 저장된 객체를 리턴
+  isEmpty() - 컬렉션이 비어있는지 조사
+  int size() - 저장되어 있는 전체 객체 수를 리턴
+
+ 3. 객체 삭제
+  void clear() - 저장된 모든 객체를 삭제
+  E remove(int index) - 주어진 인덱스에 저장된 객체를 삭제
+  boolean remove(Object o) - 주어진 객체를 삭제
+ 메소드의 매개 변수 타입과 리턴 타입에 E라는 타입 파라미터가 있는데 이것은 List 인터페이스가 제네릭 타입이기 때문이다.
+ 구체적인 타입은 구현 객체를 생성할 때 결정된다. 객체 추가는 add() 메소드를 사용하고, 객체를 찾아올 때는 get() 메소드를, 객체 삭제는
+ remove() 메소드를 사용한다.
+
+ ArrayList
+  ArrayList는 List 인터페이스의 구현 클래스로 ArrayList에 객체를 추가하면 객체가 인덱스로 관리된다. 일반 배열과 ArrayList는 인덱스로
+  객체를 관리하는 점에서는 유사하지만 큰 차이점을 가지고 있다. 배열은 생성할 때 크기가 고정되고 사용 중에 크기를 변경할 수 없지만
+  ArrayList는 저장 용량을 초과한 객체들이 들어오면 자동적으로 저장 용량이 늘어난다.
+  ArrayList를 생성하기 위해서는 저장할 객체 타입을 타입 파라미터로 표기하고 기본 생성자를 호출하면 된다.
+  List<E> list = new ArrayList<E>();
+  기본 생성자로 ArrayList 객체를 생성하면 내부에 10개의 객체를 저장할 수 있는 초기 용량을 가지게 된다.
+  ArrayList에 객체를 추가하면 인덱스 0부터 차례대로 저장된다. ArrayList에서 특정 인덱스의 객체를 제거하면 바로 뒤 인덱스부터
+  마지막 인덱스까지 모두 앞으로 1씩 당겨진다. 마찬가지로 특정 인덱스에 객체를 삽입하면 해당 인덱스부터 마지막 인덱스까지 모두 1씩 밀려난다.
+  따라서 빈번한 객체 삭제와 삽입이 일어나는 곳에서는 ArrayList를 사용하는 것이 바람직하지 않다.
+  이런 경우라면 LinkedList를 사용하는 것이 좋다. 그러나 인덱스 검색이나 맨 마지막에 객체를 추가하는 경우에는 ArrayList가 더 좋은 성능을
+  보여준다.
+  ArrayList를 생성하고 런타임 시 필요에 의해 객체들을 추가하는 것이 일반적이지만 고정된 객체들로 구성된 List를 생성할 때도 있다.
+  이런 경우에는 List<T> list = Arrays.asList(T... a); 메소드를 사용하는 것이 간편하다.
+  T 타입 파라미터에 맞게 asList()의 매개값을 순차적으로 입력하거나 T[] 배열을 매개값으로 주면된다.
+
+ Vector
+  Vector는 ArrayList와 동일한 내부 구조를 가지고 있다. Vector를 생성하기 위해서는 저장할 객체 타입을 타입 파라미터로 표기하고
+  기본 생성자를 호출하면 된다.
+  List<E> list = new Vector<E>();
+  ArrayList와 다른점은 Vector는 동기화된(synchronized) 메소드로 구성되어 있기 때문에 멀티스레드가 동시에 이 메소드들을 실행할 수 없고,
+  하나의 스레드가 실행을 완료해야만 다른 스레드를 실행할 수 있다. 그래서 멀티 스레드 환경에서 안전하게 객체를 추가, 삭제할 수 있다.
+
+ LinkedList
+  LinkedList는 List 구현클래스이므로 ArrayList와 사용 방법은 똑같지만 내부 구조는 완전 다르다
+  ArrayList는 내부 배열에 객체를 저장해서 인덱스로 관리하지만, LinkedList는 인접 참조를 링크해서 체인처럼 관리한다.
+  LinkedList에서 특정 인덱스의 객체를 제거하면 앞뒤 링크만 변경되고, 나머지 링크는 변경되지 않는다.
+  특정 인덱스에 객체를 삽입할 때에도 마찬가지다. ArrayList는 중간 인덱스의 객체를 제거하면 뒤의 객체는 인덱스가 1씩 앞으로 당겨진다.
+  때문에 빈번한 객체 삭제와 삽입이 일어나는 곳에서는 LinkedList가 ArrayList보다 좋은 성능을 발휘한다.
+  List<E> list = new LinkedList<E>();
+  LinkedList가 처음 생성될 때에는 어떠한 링크도 만들어지지 않기 때문에 내부는 비어 있다고 보면 된다.
+  끝에서부터 순차적으로 추가/삭제하는 경우는 ArrayList가 더 빠르지만, 중간에 추가, 삭제할 경우는 앞뒤 링크 정보만 변경하면 되는
+  LinkedList가 더 빠르다. ArrayList는 뒤쪽 인덱스들을 모두 1씩 증가 또는 감소시키는 시간이 필요하므로 처리속도가 느리다.
+
+Set 컬렉션
+ List 컬렉션은 저장 순서를 유지하지만 Set 컬렉션은 유지되지 않는다. 또한 객체를 중복해서 저장할 수 없고 하나의 null만 저장할 수 있다.
+ Set 컬렉션은 수학의 집합에 비유될 수 있다. 집합은 순서에 상관없고 중복이 허용되지 않기 때문이다. 또한 구슬 주머니와도 같다.
+ 동일한 구슬을 두 개 넣을수도 없고 들어갈(저장할) 때의 순서와 나올(찾을) 때의 순서가 다를 수도 있다.
+ Set 컬렉션에는 HashSet, LinkedHashSet, TreeSet 등이 있다. 다음은 Set 컬렉션에서 공통적으로 사용 가능한 Set 인터페이스의 메소들이다.
+
+ 1. 객체 추가
+  boolean add(E e) - 주어진 객체를 저장, 객체가 성공적으로 저장되면 true를 리턴하고 중복 객체면 false를 리턴
+
+ 2. 객체 검색
+  boolean contains(Object o) - 주어진 객체가 저장되어 있는지 여부
+  isEmpty() - 컬렉션이 비어 있는지 조사
+  Iterator<E> iterator() - 저장된 객체를 한 번씩 가져오는 반복자 리턴
+  int size() - 저장되어 있는 전체 객체 수 리턴
+
+ 3. 객체 삭제
+  void clear() - 저장된 모든 객체를 삭제
+  boolean remove(Object o) - 주어진 객체를 삭제
+ Set 컬렉션은 전체 객체를 대상으로 한번씩 반복해서 가져오는 반복자(Iterator)를 제공한다.
+ Set<String> set = ...;
+ Iterator<String> iterator = set.iterator();
+ 다음은 Iterator 인터페이스에 선언된 메소들이다.
+ boolean - hasNext() - 가져올 객체가 있으면 true, 없으면 false를 리턴
+ E - next() - 컬렉션에서 하나의 객체를 가져온다.
+ void - remove() - Set 컬렉션에서 객체를 제거한다.
+ Iterator에서 하나의 객체를 가져올 때는 next() 메소드를 사용하는데 가져오기 전에 객체가 있는지 hasNext()로 확인하는 것이 좋다.
+ while(iterator.hasNext()){
+    String str = iterator.next();
+ }
+ Iterator을 사용하지 않더라도 foreach문을 이용해서 전체 객체를 대상으로 반복할 수 있다.
+
+ HashSet
+  HashSet은 Set 인터페이스의 구현 클래스이다. HashSet을 생성하기 위해서는 다음과 같다
+  Set<E> set = new HashSet<E>();
+  HashSet은 객체들을 순서 없이 저장하고 동일한 객체는 중복 저장하지 않는다.
+  HashSet이 판단하는 동일한 객체란 꼭 같은 인스턴스를 뜻하지는 않는다. HashSet은 객체를 저장하기 전에 먼저 객체의 hashCode() 메소드를
+  호출해서 해시코드를 얻어낸다. 그리고 이미 저장되어 있는 객체들의 해시코드와 비교한다. 만약 동일한 해시코드가 있다면 다시 equals() 메소드로
+  두 객체를 비교해서 true가 나오면 동일한 객체로 판단하고 중복 저장하지 않는다.
+  문자열을 HashSet에 저장할 경우 같은 문자열을 갖는 String 객체는 동등한 객체로 간주되고 다른 문자열을 갖는 String 객체는 다른 객체로
+  간주되는데, 그 이유는 String 클래스가 hashCode() 와 equals() 메소드를 제정의해서 같은 문자열일 경우 hashCode()의 리턴값을 같게,
+  equals()의 리턴값은 true가 나오도록 했기 때문이다.
+
+Map 컬렉션
+ Map 컬렉션은 키(key)와 값(Value)으로 구성된 Entry 객체를 저장하는 구조를 가지고 있다.
+ 여기서 키와 값은 모두 객체이다. 키는 중복 저장될 수 없지만 값은 중복 저장될 수 있다. 만약 기존에 저장된 키와 동일한 키로 값을 저장하면
+ 기존의 값은 없어지고 새로운 값으로 대치된다.
+ Map 컬렉션에는 HashMap, Hashtable, LinkedHashMap, Properties, TreeMap 등이 있다.
+
+ 다음은 Map 컬렉션에서 공통적으로 사용 가능한 Map 인터페이스 메소드들이다.
+ 1. 객체 추가
+  V put(K key, V value) - 주어진 키와 값을 추가, 저장되면 값을 리턴
+
+ 2. 객체 검색
+  boolean containsKey(Object Key) - 주어진 키가 있는지 여부
+  boolean containsValue(Object value) - 주어진 값이 있는지 여부
+  Set<Map.Entry<K,V>> entrySet() - 키와 값의 쌍으로 구성된 모든 Map.Entry 객체를 Set에 담아서 리턴
+  V get(Object key) - 주어진 키가 있는 값을 리턴
+  boolean isEmpty() - 컬렉션이 비어있는지 여부
+  Set<K> keySet() - 모든 키를 Set 객체에 담아서 리턴
+  int size() - 저장된 키의 총 수를 리턴
+  Collection<V> values() - 저장된 모든 값을 Collection에 담아서 리턴
+
+ 3. 객체 삭제
+  void clear() - 모든 Map.Entry(키와 값)를 삭제
+  V remove(Object key) - 주어진 키와 일치하는 Map.Entry를 삭제하고 값을 리턴
+
+ 키를 알고 있다면 get() 메소드로 간단하게 객체를 찾아오면 되지만, 저장된 전체 객체를 대상으로 하나씩 얻고 싶을 경우에는 두가지 방법을
+ 사용할 수 있다. 첫 번째로는 keySet() 메소드로 모든 키를 Set 컬렉션으로 얻을 다음, 반복자를 통해 키를 하니씩 얻고 get() 메소드를 통해
+ 값을 얻으면 된다.
+ Map<K, V> map = ...;
+ Set<K> keySet = map.keySet();
+ Iterator<K> keyIterator = keySet.iterator();
+ While(keyIterator.hasNext()){
+    K key = keyIterator.next();
+    V value = map.get(key);
+ }
+ 두 번째 방법은 entrySet() 메소드로 모든 Map.Entry를 Set 컬렉션으로 얻은 다음, 반복자를 통해 Map.Entry를 하나씩 얻고 getKey()와
+ getValue() 메소드를 이용해 키와 값을 얻으면 된다.
+  Set<Map.Entry<K, V>> entrySet = map.entrySet();
+  Iterator<Map.Entry<K, V>> entryIterator = entrySet.iterator();
+  while(entryIterator.hasNext()){
+    Map.Entry<K, V> entry = entryIterator.next();
+    K key = entry.getKey();
+    V value = entry.getValue();
+  }
+
+ HashMap
+  HashMap은 Map 인터페이스를 구현한 대표적인 Map 컬렉션이다. HashMap의 키로 사용할 객체는 hashCode()와 equals() 메소드를 재정의해서
+  동등객체가 될 조건을 정해야 한다. 동등 객체, 즉 동일한 키가 될 조건은 hashCode()의 리턴값이 같아야 하고, equals() 메소드가 true를 리턴
+  해야한다. 주로 키 타입은 String을 많이 사용하는데 String은 문자열이 같을 경우 동등 객체가 될 수 있도록 hashCode()와 equals() 메소드가
+  재정의되어 있다. Hashmap을 생성하기 위해서는 키 타입과 값 타입을 파라미터로 주고 기본 생성자를 호출하면 된다.
+  Map<K, V> map = new Hashmap<K, V>();
+  키와 값의 타입은 기본 타입을 사용할 수 없고 클래스 및 인터페이스 타입만 사용 가능하다.
+
+ Hashtable
+  Hashtable은 HashMap과 동리한 내부 구조를 가지고 있다. Hashtable도 키로 사용할 객체는 hashCode()와 equals() 메소드를 재정의해서
+  동등 객체가 될 조건을 정해야 한다. HaspMap과의 차이점은 Hashtable은 동기화된 메소드로 구성되어 있기 때문에 멀티스레드가 동시에
+  이 메소드들을 실행할 수 없고, 하나의 스레드가 실행을 완료해야만 다른 스레드를 실행할 수 있다.
+  그래서 멀티 스레드환경에서 안전하게 객체를 추가, 삭제할 수 있다.
+  Map<K, V> map = new Hashtable<K, V>();
+
+ Properties
+  Properties는 Hashtable의 하위 클래스이기 때문에 Hashtable의 모든 특징을 그대로 가지고 있다.
+  차이점은 Hashtable은 키와 값을 다양한 타입으로 지정이 가능한데 비해 Properties는 키와 값을 String 타입으로 제한한 컬렉션이다.
+  Properties는 애플리케이션의 옵션 정보, 데이터베이스 연결 정보 그리고 국제화(다국어) 정보가 저장된 프로퍼티(~.properties)파일을 읽을 때
+  주로 사용한다. 프로퍼티 파일은 키와 값이 = 기호로 연결되어 있는 텍스트 파일로 ISO 8859-1 문자셋으로 저장된다.
+  이 문자셋으로 직접 표현할 수 없는 한글은 유니코드(Unicode)로 변환되어 저장된다.
+  프로퍼티 파일은 일반적으로 클래스 파일과 함께 저장된다. 클래스 파일을 기준으로 상대 경로를 이용해서 프로퍼티 파일의 경로를 얻으려면
+  Class의 getResource() 메소드를 이용하면 된다. 이 메소드는 주어진 파일의 상대 경로를 URL 객체로 리턴하고, URL의 getPath()는 파일의
+  절대 경로를 리턴한다.
+  Properties 객체에서 해당 키의 값을 읽으려면 getProperty() 메소드를 사용한다. 물론 Properties도 Map 컬렉션이므로 get()로 값을 얻을
+  수 있다. 그러나 get() 메소드는 값을 Object 타입으로 리턴하므로 강제타입변환해서 String을 얻어야하기 때문에 일반적으로
+  getProperty() 메소드를 사용한다.
+
+검색기능을 강화시킨 컬렉션
+ 컬렉션 프레임워크는 검색 기능을 강화시킨 TreeSet과 TreeMap을 제공하고 있다. 이름에서 알 수 있듯이 TreeSet은 Set 컬렉션이고,
+ TreeMap은 Map 컬렉션이다. 이 컬렉션들은 이진 트리를 이용해서 계층적 구조(Tree 구조)를 가지면서 객체를 생성한다.
+
+ 이진 트리 구조
+  이진 트리는 여러 개의 노드가 트리 형태로 연결된 구조로 루트노드라고 불리는 하나의 노드에서 시작해서 각 노드에 최대 2개의 노드를 연결할 수
+  있는 구조를 가지고 있다. 위 아래로 연결된 두 노드를 부모-자식관계에 있다고 하며 위의 노드를 부모노드, 아래 노드를 자식노드라 한다.
+  이진 트리는 부모 노드의 값보다 작은 노드는 왼쪽에 위치시키고, 부모 노드의 값보다 큰 노드는 오른쪽에 위치시킨다.
+
+  첫 번째로 저장되는 값은 루트노드가 되고, 두 번째 값은 루트 노드부터 시작해서 값의 크기를 비교하면서 트리를 따라 내려간다.
+  숫자가 아닌 문자를 저장할 경우에는 문자의 유니코드 값으로 비교한다. [왼쪽노드 -> 부모노드 -> 오른쪽 노드] 순으로 값을 읽으면 오름차순으로
+  정렬된 값을 얻을 수 있고 반대로하면 내림차순으로 정렬된 값을 얻을 수 있다. 이진 트리가 범위 검색을 쉽게 할 수 있는 이유는 값들이 정렬되어
+  있어 그룹핑이 쉽기 때문이다.
+
+ TreeSet
+  TreeSet은 이진트리를 기반으로한 Set 컬렉션이다. 하나의 노드는 노드값인 value와 왼쪽과 오른쪽 자식 노드를 참조하기 위한 두 개의 변수로
+  구성된다. TreeSet에 객체를 저장하면 자동적으로 정렬되는데 부모값과 비교해서 낮은 것은 왼쪽 자식 노드에 높은 것은 오르쪽 자식 노드에 저장됨
+  TreeSet을 생성하기 위해서는 저장할 객체 타입을 파라미터로 표기하고 기본 생성자를 호출하면 된다.
+  TreeSet<E> treeSet = new TreeSet<E>();
+  Set 인터페이스 타입 변수가 아닌, TreeSet 클래스 타입으로 대입한 이유는 객체를 찾거나 범위 검색과 관련된 메소드를 사용하기 위해서이다.
+
+  TreeSet 검색관련 메소드
+   E - first() - 제일 낮은 객체를 리턴
+   E - last() - 제일 높은 객체를 리턴
+   E - lower(E e) - 주어진 객체보다 바로 아래 객체를 리턴
+   E - higher(E e) - 주어진 객체보다 바로 위 객체를 리턴
+   E - floor(E e) - 주어진 객체와 동등한 객체가 있으면 리턴, 만약 없다면 주어진 객체의 바로 아래의 객체를 리턴
+   E - ceiling(E e) - 주어진 객체와 동등한 객체가 있으면 리턴, 만약 없다면 주어진 객체의 바로 위 객체를 리턴
+   E - pollFirst() - 제일 낮은 객체를 꺼내오고 컬렉션에서 제거함
+   E - pooLast() - 제일 높은 객체를 꺼내오고 컬렉션에서 제거함
+
+  TreeSet 정렬 관련 메소드
+   Iterator<E> - descendingIterator() - 내림차순으로 정렬된 Iterator를 리턴
+   NavigableSet<E> - descendingSet() - 내림차순으로 정렬된 NavigableSet을 반환
+   descendingIterator() 메소드는 내림차순으로 정렬된 Iterator객체를 리턴하는데 Iterator는 이미 Set 컬렉션에서 설명 했다.
+   descendingSet() 메소드는 내림차순으로 정렬된 NavigableSet 객체를 리턴하는데 NavigableSet은 TreeSet과 마찬가지로 first(), last(),
+   lower(), higher(), floor(), ceiling() 메소드를 제공하고 정렬 순서를 바꾸는 descendingSet() 메소드도 제공한다.
+   오름차순으로 정렬하고 싶다면 descendingSet() 메소드를 두번 호출하면 된다.
+   NavigableSet<E> descendingSet = treeSet.descendingSet();
+   NavigableSet<E> ascendingSet = descendingSet.descendingSet();
+
+  TreesSet 범위 검색 관련 메소드
+   NavigableSet<E> - headSet(E toElement, boolean inclusive) - 주어진 객체보다 낮은 객체들을 NavigableSet으로 리턴, 주어진 객체
+   포함 여부는 두번째 매개값에 따라 달라짐
+   NavigableSet<E> - tailSet(E fromElement, boolean inclusive)  - 주어진 객체보다 높은 객체들을 navigableSet으로 리턴, 주어진
+   객체 포함여부는 두번째 매개값에 따라 달라짐
+   NavigableSet<E> - subSet(E fromElement, boolean fromInclusive, E toElement, boolean toInclusive) - 시작과 끝으로 주어진
+   객체 사이의 객체들을 NavigableSet으로 리턴, 시작고 끝 객체의 포함 여부는 두번째, 네번쨰 매개값에 따라 달라짐
+
+ TreeMap
+  TreeMap은 이진 트리를 기반으로 한 Map 컬렉션이다. TreeSet과의 차이점은 키와 값이 저장된 Map.Entry를 저장한다는 점이다.
+  TreeMap에 객체를 저장하면 자동으로 정렬되는데 기본적으로 부모 키값과 비교해서 키 값이 낮은 것은 왼쪽 자식 노드에, 키 값이 높은 것은 오른쪽
+  자식 노드에 Map.Entry 객체를 저장한다.
+  TreeMap을 생성하기 위해서는 키로 저장할 객체 타입과, 값으로 저장할 객체 타입을 타입 파라미터로 주고 기본 생성자를 호출하면 된다.
+  TreeMap<K ,V> treeMap = new TreeMap<K, V>();
+  Map 인터페이스 타입 변수에 대입하지 않고 TreeMap 클래스 타입으로 대입하는 이유는 특정 객체를 찾거나 범위 검색과 관련된 메소드를 사용하기
+  위해서 이다.
+
+  TreeMap 이 가지고 있는 검색 관련 메소드
+   Map.Entry<K, V> - firstEntry() - 제일 낮은 Map.Entry를 리턴
+   Map.Entry<K, V> - lastEntry() - 제일 높은 Map.Entry를 리턴
+   Map.Entry<K, V> - lowerEntry(K key) - 주어진 키보다 바로 아래 Map.Entry를 리턴
+   Map.Entry<K, V> - higherEntry(K key) - 주어진 키보다 바로 위 Map.Entry를 리턴
+   Map.Entry<K, V> - floorEntry(K key) - 주어진 키와 동등한 키가 있으면 해당 Entry 리턴, 없다면 주어진 키 바로 아래의 Entry 리턴
+   Map.Entry<K, V> - ceilingEntry(K key) - 주어진 키와 동등한 키가 있으면 해당 Entry 리턴, 없다면 주어진 키 바로 위 Entry를 리턴
+   Map.Entry<K, V> - pollFirstEntry() - 제일 낮은 Map.Entry를 꺼내오고 컬렉션에서 제거
+   Map.Entry<K, V> - pollLastEntry() - 제일 높은 Map.Entry를 꺼내오고 컬렉션에서 제거
+
+  TreeMap이 가지고 있는 정렬과 관련된 메소드
+   NavigableSet<K> - descendingKeySet() - 내림차순으로 정렬된 키의 NavigableSet을 리턴
+   NavigableMap<K, V> - descendingMap() - 내림차순으로 정렬된 Map.Entry의 NavigableMap을 리턴
+
+  TreeMap이 가지고 있는 범위 검색 관련 메소드
+   NavigableMap<K, V> - headMap(K toKey, boolean inclusive) - 주어진 키보다 낮은 Map.Entry들을 NavigableMap으로 리턴, 주어진
+   키의 Map.Entry 포함여부는 두 번째 매개값에 따라 달라짐
+   NavigableMap<K, V> - tailMap(K fromKey, boolean inclusive) - 주어진 키보다 높은 Map.Entry들을 NavigableMap으로 리턴, 주어진
+   객체 포함 여부는 두번 째 매개값에 따라 달라짐
+   NavigableMap<K, V> - subMap(K fromKey, boolean fromInclusive, K toKey, boolean toInclusive) - 시작과 끝으로 주어진
+   객체 사이의 객체들을 NavigableSet으로 리턴, 시작고 끝 객체의 포함 여부는 두번째, 네번쨰 매개값에 따라 달라짐
+
+  Comparable과 Comparator
+   TreeSet의 객체와 TreeMap의 키는 저장과 동시에 자동 오름차순으로 정렬되는데 숫자 타입일 경우에는 값으로 정렬하고 문자열 타입일 경우에는
+   유니코드로 정렬한다. TreeSet과 TreeMap은 정렬을 위해 java.lang.Comparable을 구현한 객체를 요구하는데 Integer,Double,String 모두
+   Comparable 인터페이스를 구현하고 있다. 사용자 정의 클래스도 Comparable을 구현한다면 자동 정렬이 가능하다.
+   Comparable에는 compareTo() 메소드가 정의되어 있기 때문에 사용자 정의 클래스에서는 이 메소드를 오버라이딩하여 다음과 같이 리턴값을 만들어야함.
+   int - compareTo(T o) - 주어진 객체와 같으면 0을 리턴, 주어진 객체보다 작으면 음수 리턴, 주어진 객체보다 크면 양수 리턴
+
+   TreeSet의 객체와 TreeMap의 키가 Comparable을 구현하고 있지 않을 경우에는 저장하는 순간 ClassCastException이 발생한다.
+   다른 방법으로 Comparable을 구현하지 않는 객체를 정렬하는 방법이 있다. TreeSet, TreeMap 생성자의 매개값으로 정렬자(Comparator)를
+   제공하면 Comparable 비구현 객체도 정렬시킬 수 있다.
+    TreeSet<E> treeSet = new TreeSet<E>(new AscendingComparator()); //오름차순 정렬자
+    TreeMap<K, V> treeMap = new TreeMap<K, V>(new DescendingComparator()); //내림차순 정렬자
+   정렬자는 Comparator 인터페이스를 구현한 객체를 말하는데 Comparator 인터페이스에는 다음과 같이 메소드가 정의되어 있다.
+    int - compare(T o1, T o2) - o1와 o2가 동등하면 0 리턴, o1이 o2보다 앞에 오게하려면 음수 리턴, o1이 o2보다 뒤에 오게하려면 양수 리턴
+
+LIFO와 FIFO 컬렉션
+ 후입선출(LIFO)은 나중에 넣은 객체가 먼저 빠져나가는 자료구조를 말하고 선입선출은 먼저 넣은 객체가 먼저 빠져나가는 구조를 말한다.
+ 컬렉션 프레임워크는 LIFO 자료구조를 제공하는 스택클래스와 FIFO 자료구조를 제공하는 큐 인터페이스를 제공하고 있다.
+ 스텍을 응용한 대표적인 예가 JVM 스텍 메모리이다. 스텍 메모리에 저장된 변수는 나중에 저장된 것부터 제거된다.
+ 큐를 응용한 대표적은 예는 스레드풀(ExecutorService)의 작업 큐이다. 작업큐는 먼저 들어온 작업부터 처리한다.
+
+ Stack
+  E - push(E item) - 주어진 객체를 스텍에 넣는다.
+  E - peek() - 스텍의 맨 위 객체를 가져온다. 객체를 스텍에서 제거하지 않는다.
+  E - pop() - 스텍의 맨 위 객체를 가져온다. 객체를 스텍에서 제거한다.
+
+  Stack 객체를 생성하기 위해서는 저장할 객체 타입을 파라미터로 표기하고 기본 생성자를 호출하면 된다.
+   Stack<E> stack = new Stack<E>();
+
+ Queue
+  boolean - offer(E e) - 주어진 객체를 넣는다.
+  E - peek() - 객체를 하나 가져온다. 객체를 큐에서 제거하지 않는다.
+  E - poll() - 객체를 하나 가져온다. 객체를 큐에서 제거한다.
+
+  Queue 인터페이스를 구현한 대표적인 클래스는 LinkedList 이다. LinkedList는 List 인터페이스를 구현했기 때문에 List 컬렉션이기도 하다.
+  LinkedList 객체를 Queue 인터페이스 타입으로 변환
+   Queue<E> queue = new LinkedList<E>();
+
+동기화된 컬렉션
+ 컬렉션 프레임워크의 대부분의 클래스들은 싱글 스레드환경에서 사용할 수 있도록 설계되었다. 그렇기 때문에 여러 스레드가 동시에 컬렉션에 접근한다면
+ 의도하지 않게 요소가 변경될 수 있는 불안전한 상태가 된다. Vector와 Hashtable은 동기화된 메소드로 구성되어 있기 때문에 멀티 스레드 환경에서
+ 안전하게 요소를 처리할 수 있지만 ArrayList, HashSet, HashMap은 동기화된 메소드로 구성되어 있지 않아 멀티 스레드 환경에서 안전하지 않다.
+ 경우에 따라서 싱글 스레드 환경에서 사용하다가 멀티 스레드 환경으로 전달할 필요가 있을 것이다. 이런 경우를 대비해서 컬렉션 프레임워크는 비동기화된 메소드를
+ 동기화된 메소드로 래핑하는 Collections의 synchronizedXXX() 메소드를 제공하고 있다. 매개값으로 비동기화된 컬렉션을 대입하면 동기화된 컬렉션을 리턴한다.
+  List<T> - synchronizedList(List<T> list) - List를 동기화된 List로 리턴
+  Map<K, V> - synchronizedMap(Map<K, V> m) - Map을 동기화된 Map으로 리턴
+  Set<T> - synchronizedSet(Set<T> s) - Set을 동기환된 Set으로 리턴
+
+ 사용방법
+  List<T> list = Collections.synchronizedList(new ArrayList<T>());
+  Set<E> set = Collections.synchronizedSet(new HashSet<E>());
+  Map<K, V> map = Collections.synchronizedMap(new HashMap<K, V>());
+
+병렬처리를 위한 컬렉션
+ 동기화된 컬렉션은 멀티스레드 환경에서 하나의 스레드가 요소를 안전하게 처리하도록 도와주지만 전체 요소를 빠르게 처리하지는 못한다.
+ 하나의 스레드가 요소를 처리할 때 전체 잠금이 발생하여 다른 스레드는 대기 상태가 된다. 그렇기 때문에 멀티 스레드가 병렬적으로 컬렉션의 요소들을 처리할 수 없다.
+ 자바는 멀티 스레드가 컬렉션의 요소를 병렬적으로 처리할 수 있도록 특별한 컬렉션을 제공하고 있다.
+ java.util.concurrent 패키지의 ConcurrentHashMap과 ConcurrentLinkedQueue이다.
+ ConcurrentHashMap을 사용하면 스레드에 안전하면서도 멀티 스레드가 요소를 병렬적으로 처리할 수 있다.
+ 이것이 가능한 이유는 ConcurrentHashMap은 부분(segment) 잠금을 사용하기 때문이다.
+ 컬렉션에 10개의 요소가 저장되어 있을 경우 1개를 처리할 동안 전체 10개의 요소를 다른 스레드가 처리하지못하도록 하는 것이 전체 잠금이라면,
+ 처리하는 요소가 포함된 부분만 잠금하고 나머지 부분은 다른 스레드가 변경할 수 있도록 하는 것이 부분 잠금이다.
+
+ ConcurrentHashmap 객체를 생성하는 코드
+  Map<K, V> map = new ConcurrentHashMap<K, V>();
+
+ ConcurrentLinkedQueue는 락-프리(lock-free) 알고리즘을 구현한 컬렉션이다. 락-프리 알고리즘은 여러 개의 스레드가 동시에 접근할 경우,
+ 잠금을 사용하지 않고도 최소한 하나의 스레드가 안전하게 요소를 저장하거나 얻도록 해준다.
+
+ ConcurrentLinkedQueue 생성하는 코드
+  Queue<E> queue = new ConcurrentLinkedQueue<E>();
