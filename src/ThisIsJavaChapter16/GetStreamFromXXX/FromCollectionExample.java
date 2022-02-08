@@ -1,4 +1,4 @@
-package ThisIsJavaChapter16.GetStreamFromCollection;
+package ThisIsJavaChapter16.GetStreamFromXXX;
 
 import ThisIsJavaChapter16.LambdaExpressionsForeach.Student;
 
