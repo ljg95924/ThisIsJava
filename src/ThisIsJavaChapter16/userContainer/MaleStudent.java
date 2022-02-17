@@ -1,6 +1,12 @@
 package thisIsJavaChapter16.userContainer;
 
-/*public class MaleStudent {
+import thisIsJavaChapter06.PrintAnnotation;
+import thisIsJavaChapter16.collectMethod.Student;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MaleStudent {
     private List<Student> list; //요소를 저장할 컬렉션
 
     public MaleStudent() {
@@ -23,4 +29,4 @@ package thisIsJavaChapter16.userContainer;
     public List<Student> getList() {
         return list;
     }
-}*/
+}
