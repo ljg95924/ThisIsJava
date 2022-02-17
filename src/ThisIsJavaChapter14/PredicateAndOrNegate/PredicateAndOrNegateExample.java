@@ -1,4 +1,4 @@
-package ThisIsJavaChapter14.PredicateAndOrNegate;
+package thisIsJavaChapter14.predicateAndOrNegate;
 
 import java.util.function.IntPredicate;
 

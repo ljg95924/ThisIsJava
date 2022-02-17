@@ -1,4 +1,4 @@
-package ThisIsJavaChapter07;
+package thisIsJavaChapter07;
 
 public abstract class AbstractMethodAnimal {
     public String kind;

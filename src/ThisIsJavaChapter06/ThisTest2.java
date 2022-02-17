@@ -1,4 +1,4 @@
-package ThisIsJavaChapter06;
+package thisIsJavaChapter06;
 
 public class ThisTest2 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package ThisIsJavaChapter13.BoundedTypeParameter;
+package thisIsJavaChapter13.boundedTypeParameter;
 
 public class Util {
     public static <T extends Number> int compare(T t1, T t2) {

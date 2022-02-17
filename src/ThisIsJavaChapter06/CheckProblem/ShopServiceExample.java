@@ -1,4 +1,4 @@
-package ThisIsJavaChapter06.CheckProblem;
+package thisIsJavaChapter06.checkProblem;
 
 public class ShopServiceExample {
     public static void main(String[] args) {

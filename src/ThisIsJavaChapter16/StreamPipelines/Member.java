@@ -1,4 +1,4 @@
-package ThisIsJavaChapter16.StreamPipelines;
+package thisIsJavaChapter16.streamPipelines;
 
 public class Member {
     public static int Male = 0;

@@ -1,4 +1,4 @@
-package ThisIsJavaChapter15.HashSet;
+package thisIsJavaChapter15.hashSet;
 
 import java.util.HashSet;
 import java.util.Iterator;

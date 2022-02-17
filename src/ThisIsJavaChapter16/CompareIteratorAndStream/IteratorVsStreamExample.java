@@ -1,4 +1,4 @@
-package ThisIsJavaChapter16.CompareIteratorAndStream;
+package thisIsJavaChapter16.compareIteratorAndStream;
 
 import java.util.Arrays;
 import java.util.Iterator;

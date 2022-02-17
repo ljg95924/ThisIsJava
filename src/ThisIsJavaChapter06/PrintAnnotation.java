@@ -1,4 +1,4 @@
-package ThisIsJavaChapter06;
+package thisIsJavaChapter06;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

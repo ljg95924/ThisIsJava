@@ -1,4 +1,4 @@
-package ThisIsJavaChapter11.IsNullAndNonNullAndRequireNonNull;
+package thisIsJavaChapter11.isNullAndNonNullAndRequireNonNull;
 
 import java.util.Objects;
 

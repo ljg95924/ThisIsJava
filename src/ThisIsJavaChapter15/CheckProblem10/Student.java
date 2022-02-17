@@ -1,4 +1,4 @@
-package ThisIsJavaChapter15.CheckProblem10;
+package thisIsJavaChapter15.checkProblem10;
 
 public class Student implements Comparable<Student> {
     private String id;

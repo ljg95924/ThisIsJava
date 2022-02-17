@@ -1,4 +1,4 @@
-package ThisIsJavaChapter15.CheckProblem08;
+package thisIsJavaChapter15.checkProblem08;
 
 import java.util.Objects;
 

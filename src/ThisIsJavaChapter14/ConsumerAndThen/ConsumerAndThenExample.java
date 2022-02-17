@@ -1,4 +1,4 @@
-package ThisIsJavaChapter14.ConsumerAndThen;
+package thisIsJavaChapter14.consumerAndThen;
 
 import java.util.function.Consumer;
 

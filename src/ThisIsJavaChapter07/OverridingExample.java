@@ -1,4 +1,4 @@
-package ThisIsJavaChapter07;
+package thisIsJavaChapter07;
 
 public class OverridingExample {
     public static void main(String[] args) {

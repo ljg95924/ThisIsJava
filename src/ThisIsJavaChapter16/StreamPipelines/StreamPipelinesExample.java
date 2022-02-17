@@ -1,4 +1,4 @@
-package ThisIsJavaChapter16.StreamPipelines;
+package thisIsJavaChapter16.streamPipelines;
 
 import java.util.Arrays;
 import java.util.List;

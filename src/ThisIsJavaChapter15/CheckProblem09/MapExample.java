@@ -1,4 +1,4 @@
-package ThisIsJavaChapter15.CheckProblem09;
+package thisIsJavaChapter15.checkProblem09;
 
 import java.util.HashMap;
 import java.util.Iterator;

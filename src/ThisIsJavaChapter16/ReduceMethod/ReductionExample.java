@@ -1,7 +1,7 @@
-package ThisIsJavaChapter16.ReduceMethod;
+package thisIsJavaChapter16.reduceMethod;
 
 
-import ThisIsJavaChapter16.LambdaExpressionsForeach.Student;
+import thisIsJavaChapter16.lambdaExpressionsForeach.Student;
 
 import java.util.Arrays;
 import java.util.List;

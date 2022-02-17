@@ -1,4 +1,4 @@
-package ThisIsJavaChapter16.SortedMethod;
+package thisIsJavaChapter16.sortedMethod;
 
 import java.util.Arrays;
 import java.util.Comparator;

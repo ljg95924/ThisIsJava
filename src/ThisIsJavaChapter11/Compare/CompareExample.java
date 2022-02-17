@@ -1,4 +1,4 @@
-package ThisIsJavaChapter11.Compare;
+package thisIsJavaChapter11.compare;
 
 import java.util.Objects;
 

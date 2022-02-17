@@ -1,4 +1,4 @@
-package ThisIsJavaChapter15.ArrayList;
+package thisIsJavaChapter15.arrayList;
 
 import java.util.Arrays;
 import java.util.List;

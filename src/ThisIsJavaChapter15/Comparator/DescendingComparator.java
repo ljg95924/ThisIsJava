@@ -1,4 +1,4 @@
-package ThisIsJavaChapter15.Comparator;
+package thisIsJavaChapter15.comparator;
 import java.util.Comparator;
 
 public class DescendingComparator implements Comparator<Fruit> {

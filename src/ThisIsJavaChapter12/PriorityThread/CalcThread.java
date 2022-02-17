@@ -1,4 +1,4 @@
-package ThisIsJavaChapter12.PriorityThread;
+package thisIsJavaChapter12.PriorityThread;
 
 public class CalcThread extends Thread {
     public CalcThread(String name) {

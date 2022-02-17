@@ -1,4 +1,4 @@
-package ThisIsJavaChapter13.GenericBagic;
+package thisIsJavaChapter13.genericBagic;
 
 public class BoxExample {
     public static void main(String[] args) {

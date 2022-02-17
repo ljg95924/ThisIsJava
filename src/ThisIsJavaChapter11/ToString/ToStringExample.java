@@ -1,4 +1,4 @@
-package ThisIsJavaChapter11.ToString;
+package thisIsJavaChapter11.toString;
 
 import java.util.Date;
 

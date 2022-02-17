@@ -1,4 +1,4 @@
-package ThisIsJavaChapter15.Queue;
+package thisIsJavaChapter15.queue;
 
 public class Message {
     private String command;

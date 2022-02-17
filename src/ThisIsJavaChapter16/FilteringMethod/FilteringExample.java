@@ -1,4 +1,4 @@
-package ThisIsJavaChapter16.FilteringMethod;
+package thisIsJavaChapter16.filteringMethod;
 
 import java.util.Arrays;
 import java.util.List;

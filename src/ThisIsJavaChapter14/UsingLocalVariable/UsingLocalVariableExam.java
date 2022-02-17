@@ -1,4 +1,4 @@
-package ThisIsJavaChapter14.UsingLocalVariable;
+package thisIsJavaChapter14.usingLocalVariable;
 
 public class UsingLocalVariableExam {
     public static void main(String[] args) {

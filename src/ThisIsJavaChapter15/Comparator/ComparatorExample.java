@@ -1,6 +1,5 @@
-package ThisIsJavaChapter15.Comparator;
+package thisIsJavaChapter15.comparator;
 
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.TreeSet;
 

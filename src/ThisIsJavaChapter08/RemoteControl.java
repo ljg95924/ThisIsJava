@@ -1,4 +1,4 @@
-package ThisIsJavaChapter08;
+package thisIsJavaChapter08;
 
 public interface RemoteControl {
     int MAX_VOLUME = 10;

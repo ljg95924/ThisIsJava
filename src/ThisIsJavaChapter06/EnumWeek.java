@@ -1,6 +1,4 @@
-package ThisIsJavaChapter06;
-
-import ThisIsJavaChapter06.Week;
+package thisIsJavaChapter06;
 
 public class EnumWeek {
     public static void main(String[] args) {

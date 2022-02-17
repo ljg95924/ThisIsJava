@@ -1,4 +1,4 @@
-package ThisIsJavaChapter15.HashMap;
+package thisIsJavaChapter15.hashMap;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,6 +1,6 @@
-package ThisIsJavaChapter13.GenericMethod;
+package thisIsJavaChapter13.genericMethod;
 
-import ThisIsJavaChapter13.GenericBagic.Box;
+import thisIsJavaChapter13.genericBagic.Box;
 
 public class BoxingMethodExample {
     public static void main(String[] args) {

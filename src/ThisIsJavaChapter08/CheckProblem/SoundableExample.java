@@ -1,4 +1,4 @@
-package ThisIsJavaChapter08.CheckProblem;
+package thisIsJavaChapter08.checkProblem;
 
 public class SoundableExample {
     private static void printSound(Soundable soundable){

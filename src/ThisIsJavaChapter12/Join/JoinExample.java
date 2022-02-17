@@ -1,4 +1,4 @@
-package ThisIsJavaChapter12.Join;
+package thisIsJavaChapter12.Join;
 
 public class JoinExample {
     public static void main(String[] args) {

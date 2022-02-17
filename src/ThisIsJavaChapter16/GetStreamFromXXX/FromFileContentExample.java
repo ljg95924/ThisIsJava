@@ -1,4 +1,4 @@
-package ThisIsJavaChapter16.GetStreamFromXXX;
+package thisIsJavaChapter16.getStreamFromXXX;
 
 import java.io.BufferedReader;
 import java.io.File;

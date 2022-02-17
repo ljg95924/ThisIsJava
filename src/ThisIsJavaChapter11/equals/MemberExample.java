@@ -1,4 +1,4 @@
-package ThisIsJavaChapter11.equals;
+package thisIsJavaChapter11.equals;
 
 public class MemberExample {
     public static void main(String[] args) {

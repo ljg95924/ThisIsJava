@@ -1,4 +1,4 @@
-package ThisIsJavaChapter15.Queue;
+package thisIsJavaChapter15.queue;
 
 import java.util.LinkedList;
 import java.util.Queue;

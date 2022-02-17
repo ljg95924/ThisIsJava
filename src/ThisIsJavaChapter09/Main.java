@@ -1,4 +1,4 @@
-package ThisIsJavaChapter09;
+package thisIsJavaChapter09;
 
 public class Main {
     private static A.B b;

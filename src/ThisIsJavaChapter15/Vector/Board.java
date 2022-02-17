@@ -1,4 +1,4 @@
-package ThisIsJavaChapter15.Vector;
+package thisIsJavaChapter15.vector;
 
 public class Board {
     private String subject;

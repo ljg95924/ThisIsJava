@@ -1,4 +1,4 @@
-package ThisIsJavaChapter09.AnoymousInterfaceObject;
+package thisIsJavaChapter09.anoymousInterfaceObject;
 
 public class AnonymousExample {
     public static void main(String[] args) {

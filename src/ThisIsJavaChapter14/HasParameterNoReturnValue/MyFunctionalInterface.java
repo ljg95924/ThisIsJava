@@ -1,4 +1,4 @@
-package ThisIsJavaChapter14.HasParameterNoReturnValue;
+package thisIsJavaChapter14.hasParameterNoReturnValue;
 
 @FunctionalInterface
 public interface MyFunctionalInterface {

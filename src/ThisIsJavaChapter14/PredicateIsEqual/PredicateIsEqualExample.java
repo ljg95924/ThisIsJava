@@ -1,4 +1,4 @@
-package ThisIsJavaChapter14.PredicateIsEqual;
+package thisIsJavaChapter14.predicateIsEqual;
 
 import java.util.function.Predicate;
 

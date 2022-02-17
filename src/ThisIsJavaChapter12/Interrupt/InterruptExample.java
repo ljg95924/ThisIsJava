@@ -1,6 +1,4 @@
-package ThisIsJavaChapter12.Interrupt;
-
-import ThisIsJavaChapter12.StopFlag.PrintThread;
+package thisIsJavaChapter12.Interrupt;
 
 public class InterruptExample {
     public static void main(String[] args) {

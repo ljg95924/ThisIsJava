@@ -1,4 +1,4 @@
-package ThisIsJavaChapter13.WildcardType;
+package thisIsJavaChapter13.wildcardType;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package ThisIsJavaChapter11.CharAt;
+package thisIsJavaChapter11.charAt;
 
 public class StringChatAtExample {
     public static void main(String[] args) {

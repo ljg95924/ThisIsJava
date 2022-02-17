@@ -1,4 +1,4 @@
-package ThisIsJavaChapter11.NewInstance;
+package thisIsJavaChapter11.newInstance;
 
 public class ReceiveAction implements Action{
     @Override

@@ -1,4 +1,4 @@
-package ThisIsJavaChapter12.StopFlag;
+package thisIsJavaChapter12.StopFlag;
 
 public class PrintThread extends Thread {
     private boolean stop;

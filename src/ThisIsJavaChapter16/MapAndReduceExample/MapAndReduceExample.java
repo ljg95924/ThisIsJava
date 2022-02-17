@@ -1,6 +1,6 @@
-package ThisIsJavaChapter16.MapAndReduceExample;
+package thisIsJavaChapter16.mapAndReduceExample;
 
-import ThisIsJavaChapter16.LambdaExpressionsForeach.Student;
+import thisIsJavaChapter16.lambdaExpressionsForeach.Student;
 
 import java.util.Arrays;
 import java.util.List;

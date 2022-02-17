@@ -1,4 +1,4 @@
-package ThisIsJavaChapter16.LoopingPeekForEachMethod;
+package thisIsJavaChapter16.loopingPeekForEachMethod;
 
 import java.util.Arrays;
 

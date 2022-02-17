@@ -1,10 +1,10 @@
-package ThisIsJavaChapter11.Reflection;
+package thisIsJavaChapter11.reflection;
 
 import java.lang.reflect.*;
 
 public class ReflectionExample {
     public static void main(String[] args) throws ClassNotFoundException {
-        Class clazz = Class.forName("ThisIsJavaChapter06.Car");
+        Class clazz = Class.forName("thisIsJavaChapter06.Car");
 
         System.out.println("클래스이름");
         System.out.println(clazz.getName());

@@ -1,6 +1,5 @@
-package ThisIsJavaChapter15.CheckProblem10;
+package thisIsJavaChapter15.checkProblem10;
 
-import java.util.Set;
 import java.util.TreeSet;
 
 public class TreeSetExample {

@@ -1,4 +1,4 @@
-package ThisIsJavaChapter15.Vector;
+package thisIsJavaChapter15.vector;
 
 import java.util.List;
 import java.util.Vector;

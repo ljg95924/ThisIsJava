@@ -1,4 +1,4 @@
-package ThisIsJavaChapter14.OperatorInterface;
+package thisIsJavaChapter14.operatorInterface;
 
 import java.util.function.IntBinaryOperator;
 

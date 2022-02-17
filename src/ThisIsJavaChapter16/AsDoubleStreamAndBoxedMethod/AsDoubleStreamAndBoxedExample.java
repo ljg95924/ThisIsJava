@@ -1,4 +1,4 @@
-package ThisIsJavaChapter16.AsDoubleStreamAndBoxedMethod;
+package thisIsJavaChapter16.asDoubleStreamAndBoxedMethod;
 
 import java.util.Arrays;
 import java.util.stream.IntStream;

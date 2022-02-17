@@ -1,4 +1,4 @@
-package ThisIsJavaChapter10;
+package thisIsJavaChapter10;
 
 public class TryWithResourceFileInputStream implements AutoCloseable {
     private String file;

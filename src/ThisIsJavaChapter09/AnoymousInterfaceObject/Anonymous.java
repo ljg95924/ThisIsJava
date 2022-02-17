@@ -1,4 +1,4 @@
-package ThisIsJavaChapter09.AnoymousInterfaceObject;
+package thisIsJavaChapter09.anoymousInterfaceObject;
 
 public class Anonymous {
     //필드 초기값으로 대입

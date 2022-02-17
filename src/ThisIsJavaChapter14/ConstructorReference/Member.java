@@ -1,4 +1,4 @@
-package ThisIsJavaChapter14.ConstructorReference;
+package thisIsJavaChapter14.constructorReference;
 
 public class Member {
     private String name;

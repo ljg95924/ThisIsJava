@@ -1,4 +1,4 @@
-package ThisIsJavaChapter13.GenericMultiTypeParameter;
+package thisIsJavaChapter13.genericMultiTypeParameter;
 
 public class ProductExample {
     public static void main(String[] args) {

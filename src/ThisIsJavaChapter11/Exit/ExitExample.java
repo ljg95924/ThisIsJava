@@ -1,4 +1,4 @@
-package ThisIsJavaChapter11.Exit;
+package thisIsJavaChapter11.exit;
 
 public class ExitExample {
     public static void main(String[] args) {

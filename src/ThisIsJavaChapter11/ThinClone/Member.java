@@ -1,4 +1,4 @@
-package ThisIsJavaChapter11.ThinClone;
+package thisIsJavaChapter11.thinClone;
 
 public class Member implements Cloneable {
     public String id;

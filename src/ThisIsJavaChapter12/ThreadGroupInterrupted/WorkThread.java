@@ -1,4 +1,4 @@
-package ThisIsJavaChapter12.ThreadGroupInterrupted;
+package thisIsJavaChapter12.ThreadGroupInterrupted;
 
 public class WorkThread extends Thread {
     public WorkThread(ThreadGroup threadGroup, String ThreadName) {

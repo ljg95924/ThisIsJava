@@ -1,4 +1,4 @@
-package ThisIsJavaChapter14.ConstructorReference;
+package thisIsJavaChapter14.constructorReference;
 
 import java.util.function.BiFunction;
 import java.util.function.Function;

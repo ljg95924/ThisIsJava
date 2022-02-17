@@ -1,4 +1,4 @@
-package ThisIsJavaChapter13.WildcardType;
+package thisIsJavaChapter13.wildcardType;
 
 public class Course<T> {
     private String name;

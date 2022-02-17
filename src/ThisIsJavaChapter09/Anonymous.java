@@ -1,4 +1,4 @@
-package ThisIsJavaChapter09;
+package thisIsJavaChapter09;
 
 public class Anonymous {
     // 필드 초기값으로 대입

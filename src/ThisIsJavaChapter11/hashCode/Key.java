@@ -1,4 +1,4 @@
-package ThisIsJavaChapter11.hashCode;
+package thisIsJavaChapter11.hashCode;
 
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package ThisIsJavaChapter14.HasParameterHasReturnValue;
+package thisIsJavaChapter14.hasParameterHasReturnValue;
 
 public class HasParameterHasReturnExam {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package ThisIsJavaChapter14.PredicateInterface;
+package thisIsJavaChapter14.predicateInterface;
 
 import java.util.Arrays;
 import java.util.List;

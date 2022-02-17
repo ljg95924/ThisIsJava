@@ -1,4 +1,4 @@
-package ThisIsJavaChapter16.ParallelStream;
+package thisIsJavaChapter16.parallelStream;
 
 import java.util.Arrays;
 import java.util.List;

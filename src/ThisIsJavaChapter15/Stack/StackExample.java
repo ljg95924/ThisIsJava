@@ -1,4 +1,4 @@
-package ThisIsJavaChapter15.Stack;
+package thisIsJavaChapter15.stack;
 
 import java.util.Stack;
 

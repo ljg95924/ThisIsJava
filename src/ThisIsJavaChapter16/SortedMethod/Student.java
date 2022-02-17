@@ -1,4 +1,4 @@
-package ThisIsJavaChapter16.SortedMethod;
+package thisIsJavaChapter16.sortedMethod;
 
 public class Student implements Comparable<Student> {
 

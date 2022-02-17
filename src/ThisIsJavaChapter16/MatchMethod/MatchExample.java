@@ -1,6 +1,4 @@
-package ThisIsJavaChapter16.MatchMethod;
-
-import ThisIsJavaChapter09.A;
+package thisIsJavaChapter16.matchMethod;
 
 import java.util.Arrays;
 

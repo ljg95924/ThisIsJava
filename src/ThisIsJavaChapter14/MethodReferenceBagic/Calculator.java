@@ -1,4 +1,4 @@
-package ThisIsJavaChapter14.MethodReferenceBagic;
+package thisIsJavaChapter14.methodReferenceBagic;
 
 public class Calculator {
     public static int staticMethod(int x, int y) {

@@ -1,4 +1,4 @@
-package ThisIsJavaChapter16.OptionalClass;
+package thisIsJavaChapter16.optionalClass;
 
 import java.util.ArrayList;
 import java.util.List;

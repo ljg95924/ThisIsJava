@@ -1,4 +1,4 @@
-package ThisIsJavaChapter15.Comparable;
+package thisIsJavaChapter15.comparable;
 
 public class Person implements Comparable<Person> {
     private String name;

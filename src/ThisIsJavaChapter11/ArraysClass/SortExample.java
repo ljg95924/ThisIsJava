@@ -1,4 +1,4 @@
-package ThisIsJavaChapter11.ArraysClass;
+package thisIsJavaChapter11.arraysClass;
 
 import java.util.Arrays;
 

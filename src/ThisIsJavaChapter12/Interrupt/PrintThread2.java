@@ -1,4 +1,4 @@
-package ThisIsJavaChapter12.Interrupt;
+package thisIsJavaChapter12.Interrupt;
 
 public class PrintThread2 extends Thread {
     @Override

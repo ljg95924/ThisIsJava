@@ -1,4 +1,4 @@
-package ThisIsJavaChapter14.MethodReferenceBagic;
+package thisIsJavaChapter14.methodReferenceBagic;
 
 import java.util.function.IntBinaryOperator;
 

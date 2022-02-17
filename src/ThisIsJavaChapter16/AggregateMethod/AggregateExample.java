@@ -1,4 +1,4 @@
-package ThisIsJavaChapter16.AggregateMethod;
+package thisIsJavaChapter16.aggregateMethod;
 
 import java.util.Arrays;
 

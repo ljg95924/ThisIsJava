@@ -1,4 +1,4 @@
-package ThisIsJavaChapter12.ObjectMethodWaitNotifyNotifyAll;
+package thisIsJavaChapter12.ObjectMethodWaitNotifyNotifyAll;
 
 public class WaitNotifyExample2 {
     public static void main(String[] args) {

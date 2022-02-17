@@ -1,4 +1,4 @@
-package ThisIsJavaChapter15.TreeSet;
+package thisIsJavaChapter15.treeSet;
 
 import java.util.NavigableSet;
 import java.util.TreeSet;

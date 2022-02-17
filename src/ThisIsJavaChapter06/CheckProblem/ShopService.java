@@ -1,4 +1,4 @@
-package ThisIsJavaChapter06.CheckProblem;
+package thisIsJavaChapter06.checkProblem;
 
 public class ShopService {
     private static ShopService singleton = new ShopService();

@@ -1,7 +1,6 @@
-package ThisIsJavaChapter15.TreeSet;
+package thisIsJavaChapter15.treeSet;
 
 import java.util.NavigableSet;
-import java.util.Set;
 import java.util.TreeSet;
 
 public class TreeSetExample03 {

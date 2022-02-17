@@ -1,4 +1,4 @@
-package ThisIsJavaChapter06;
+package thisIsJavaChapter06;
 
 public class Service {
     @PrintAnnotation

@@ -1,4 +1,4 @@
-package ThisIsJavaChapter15.Hashtable;
+package thisIsJavaChapter15.hashtable;
 
 import java.util.Hashtable;
 import java.util.Map;

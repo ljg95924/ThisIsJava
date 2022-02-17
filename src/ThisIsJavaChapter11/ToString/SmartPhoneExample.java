@@ -1,4 +1,4 @@
-package ThisIsJavaChapter11.ToString;
+package thisIsJavaChapter11.toString;
 
 public class SmartPhoneExample {
     public static void main(String[] args) {

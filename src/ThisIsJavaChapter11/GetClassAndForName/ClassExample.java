@@ -1,6 +1,6 @@
-package ThisIsJavaChapter11.GetClassAndForName;
+package thisIsJavaChapter11.getClassAndForName;
 
-import ThisIsJavaChapter10.Account;
+import thisIsJavaChapter10.Account;
 
 public class ClassExample {
     public static void main(String[] args) {
@@ -12,7 +12,7 @@ public class ClassExample {
         System.out.println();
 
         try {
-            Class clazz2 = Class.forName("ThisIsJavaChapter10.Account");
+            Class clazz2 = Class.forName("thisIsJavaChapter10.Account");
             System.out.println(clazz2.getName());
             System.out.println(clazz2.getSimpleName());
             System.out.println(clazz2.getPackage().getName());

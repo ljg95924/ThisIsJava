@@ -1,4 +1,4 @@
-package ThisIsJavaChapter09.AnoymousInterfaceObject;
+package thisIsJavaChapter09.anoymousInterfaceObject;
 
 public interface RemoteControl {
     public void turnOn();

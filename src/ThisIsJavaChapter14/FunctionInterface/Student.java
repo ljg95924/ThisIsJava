@@ -1,4 +1,4 @@
-package ThisIsJavaChapter14.FunctionInterface;
+package thisIsJavaChapter14.functionInterface;
 
 public class Student {
     private String name;

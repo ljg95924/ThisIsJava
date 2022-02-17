@@ -1,4 +1,4 @@
-package ThisIsJavaChapter15.Comparator;
+package thisIsJavaChapter15.comparator;
 
 public class Fruit {
     private String name;

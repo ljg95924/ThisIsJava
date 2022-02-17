@@ -1,4 +1,4 @@
-package ThisIsJavaChapter14.FunctionInterface;
+package thisIsJavaChapter14.functionInterface;
 
 import java.util.Arrays;
 import java.util.List;

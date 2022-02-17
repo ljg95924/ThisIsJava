@@ -1,4 +1,4 @@
-package ThisIsJavaChapter12.ThreadExtendBeepExample;
+package thisIsJavaChapter12.ThreadExtendBeepExample;
 
 public class BeepPrintExample {
     public static void main(String[] args) {

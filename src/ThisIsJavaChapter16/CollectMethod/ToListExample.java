@@ -1,4 +1,4 @@
-package ThisIsJavaChapter16.CollectMethod;
+package thisIsJavaChapter16.collectMethod;
 
 import java.util.Arrays;
 import java.util.HashSet;

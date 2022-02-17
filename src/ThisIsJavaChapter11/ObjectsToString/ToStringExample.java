@@ -1,4 +1,4 @@
-package ThisIsJavaChapter11.ObjectsToString;
+package thisIsJavaChapter11.objectsToString;
 
 import java.util.Objects;
 

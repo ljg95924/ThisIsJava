@@ -1,4 +1,4 @@
-package ThisIsJavaChapter14.ArgumentMethodReference;
+package thisIsJavaChapter14.argumentMethodReference;
 
 import java.util.function.ToIntBiFunction;
 

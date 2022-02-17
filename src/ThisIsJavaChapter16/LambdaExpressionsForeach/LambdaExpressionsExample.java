@@ -1,4 +1,4 @@
-package ThisIsJavaChapter16.LambdaExpressionsForeach;
+package thisIsJavaChapter16.lambdaExpressionsForeach;
 
 import java.util.Arrays;
 import java.util.List;

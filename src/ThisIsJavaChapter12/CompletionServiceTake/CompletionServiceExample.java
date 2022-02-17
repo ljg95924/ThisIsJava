@@ -1,4 +1,4 @@
-package ThisIsJavaChapter12.CompletionServiceTake;
+package thisIsJavaChapter12.CompletionServiceTake;
 
 import java.util.concurrent.*;
 

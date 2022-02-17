@@ -1,4 +1,4 @@
-package ThisIsJavaChapter11.DeepClone;
+package thisIsJavaChapter11.deepClone;
 
 import java.util.Arrays;
 

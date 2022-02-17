@@ -1,4 +1,4 @@
-package ThisIsJavaChapter11.GarbageCollector;
+package thisIsJavaChapter11.garbageCollector;
 
 public class GcExample {
     public static void main(String[] args) {

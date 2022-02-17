@@ -1,4 +1,4 @@
-package ThisIsJavaChapter11.ArraysClass;
+package thisIsJavaChapter11.arraysClass;
 
 public class Member implements Comparable<Member> {
     String name;

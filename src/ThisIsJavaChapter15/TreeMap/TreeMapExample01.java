@@ -1,4 +1,4 @@
-package ThisIsJavaChapter15.TreeMap;
+package thisIsJavaChapter15.treeMap;
 
 import java.util.Map;
 import java.util.TreeMap;

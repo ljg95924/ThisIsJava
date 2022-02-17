@@ -1,6 +1,6 @@
-package ThisIsJavaChapter12.ThreadGroupInfo;
+package thisIsJavaChapter12.ThreadGroupInfo;
 
-import ThisIsJavaChapter12.DaemonThread.AutoSaveThread;
+import thisIsJavaChapter12.DaemonThread.AutoSaveThread;
 
 import java.util.Map;
 import java.util.Set;

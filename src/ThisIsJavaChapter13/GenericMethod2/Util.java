@@ -1,4 +1,4 @@
-package ThisIsJavaChapter13.GenericMethod2;
+package thisIsJavaChapter13.genericMethod2;
 
 public class Util {
     public static <K, V> boolean compare(Pair<K, V> p1, Pair<K, V> p2) {

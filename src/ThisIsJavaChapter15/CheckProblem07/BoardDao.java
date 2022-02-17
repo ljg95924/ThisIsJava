@@ -1,4 +1,4 @@
-package ThisIsJavaChapter15.CheckProblem07;
+package thisIsJavaChapter15.checkProblem07;
 
 import java.util.ArrayList;
 import java.util.List;

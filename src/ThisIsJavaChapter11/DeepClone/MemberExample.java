@@ -1,4 +1,4 @@
-package ThisIsJavaChapter11.DeepClone;
+package thisIsJavaChapter11.deepClone;
 
 public class MemberExample {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package ThisIsJavaChapter13.GenericInheritance;
+package thisIsJavaChapter13.genericInheritance;
 
 public class ChildProductAndStorageExample {
     public static void main(String[] args) {

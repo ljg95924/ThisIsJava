@@ -1,4 +1,4 @@
-package ThisIsJavaChapter09;
+package thisIsJavaChapter09;
 
 public class AnonymousExample {
     public static void main(String[] args) {

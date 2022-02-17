@@ -1,4 +1,4 @@
-package ThisIsJavaChapter13.GenericInheritance;
+package thisIsJavaChapter13.genericInheritance;
 
 public class Product<T, M> {
     private T kind;

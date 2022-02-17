@@ -1,4 +1,4 @@
-package ThisIsJavaChapter14.ConsumerInterface;
+package thisIsJavaChapter14.consumerInterface;
 
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;

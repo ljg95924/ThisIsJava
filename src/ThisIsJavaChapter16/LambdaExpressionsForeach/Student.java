@@ -1,4 +1,4 @@
-package ThisIsJavaChapter16.LambdaExpressionsForeach;
+package thisIsJavaChapter16.lambdaExpressionsForeach;
 
 public class Student {
     private String name;

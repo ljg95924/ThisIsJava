@@ -1,4 +1,4 @@
-package ThisIsJavaChapter16.GetStreamFromXXX;
+package thisIsJavaChapter16.getStreamFromXXX;
 
 import java.util.Arrays;
 import java.util.stream.IntStream;

@@ -1,4 +1,4 @@
-package ThisIsJavaChapter08;
+package thisIsJavaChapter08;
 
 public class RemoteControllerExample {
     public static void main(String[] args) {

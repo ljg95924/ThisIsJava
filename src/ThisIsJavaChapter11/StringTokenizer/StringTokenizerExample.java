@@ -1,4 +1,4 @@
-package ThisIsJavaChapter11.StringTokenizer;
+package thisIsJavaChapter11.stringTokenizer;
 
 import java.util.StringTokenizer;
 

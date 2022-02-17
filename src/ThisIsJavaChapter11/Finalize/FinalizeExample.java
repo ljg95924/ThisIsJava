@@ -1,4 +1,4 @@
-package ThisIsJavaChapter11.Finalize;
+package thisIsJavaChapter11.finalize;
 
 public class FinalizeExample {
     public static void main(String[] args) {

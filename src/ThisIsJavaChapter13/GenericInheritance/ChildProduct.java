@@ -1,4 +1,4 @@
-package ThisIsJavaChapter13.GenericInheritance;
+package thisIsJavaChapter13.genericInheritance;
 
 public class ChildProduct<T, M, C> extends Product<T, M> {
     private C company;

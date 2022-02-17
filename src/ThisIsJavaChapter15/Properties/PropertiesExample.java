@@ -1,4 +1,4 @@
-package ThisIsJavaChapter15.Properties;
+package thisIsJavaChapter15.properties;
 
 import java.io.FileReader;
 import java.io.IOException;

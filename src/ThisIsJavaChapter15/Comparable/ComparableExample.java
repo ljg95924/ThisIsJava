@@ -1,4 +1,4 @@
-package ThisIsJavaChapter15.Comparable;
+package thisIsJavaChapter15.comparable;
 
 import java.util.Iterator;
 import java.util.TreeSet;

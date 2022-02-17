@@ -1,4 +1,4 @@
-package ThisIsJavaChapter12.BeepExample;
+package thisIsJavaChapter12.BeepExample;
 
 import java.awt.*;
 

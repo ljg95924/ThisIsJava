@@ -1,4 +1,4 @@
-package ThisIsJavaChapter13.GenericMultiTypeParameter;
+package thisIsJavaChapter13.genericMultiTypeParameter;
 
 public class Product<T, M> {
     private T kind;

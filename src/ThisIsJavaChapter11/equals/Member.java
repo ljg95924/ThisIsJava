@@ -1,6 +1,4 @@
-package ThisIsJavaChapter11.equals;
-
-import java.util.Objects;
+package thisIsJavaChapter11.equals;
 
 public class Member {
     public String id;

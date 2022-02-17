@@ -1,4 +1,4 @@
-package ThisIsJavaChapter14.OperatorMinByMaxBy;
+package thisIsJavaChapter14.operatorMinByMaxBy;
 
 public class Fruit {
 

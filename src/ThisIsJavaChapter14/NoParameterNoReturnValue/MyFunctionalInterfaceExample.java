@@ -1,4 +1,4 @@
-package ThisIsJavaChapter14.NoParameterNoReturnValue;
+package thisIsJavaChapter14.noParameterNoReturnValue;
 
 public class MyFunctionalInterfaceExample {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package ThisIsJavaChapter12.ThreadExtendBeepExample;
+package thisIsJavaChapter12.ThreadExtendBeepExample;
 
 import java.awt.*;
 

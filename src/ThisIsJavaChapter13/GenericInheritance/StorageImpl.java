@@ -1,4 +1,4 @@
-package ThisIsJavaChapter13.GenericInheritance;
+package thisIsJavaChapter13.genericInheritance;
 
 public class StorageImpl<T> implements Storage<T> {
 

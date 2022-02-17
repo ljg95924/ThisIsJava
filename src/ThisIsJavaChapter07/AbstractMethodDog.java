@@ -1,4 +1,4 @@
-package ThisIsJavaChapter07;
+package thisIsJavaChapter07;
 
 public class AbstractMethodDog extends AbstractMethodAnimal {
     public AbstractMethodDog() {

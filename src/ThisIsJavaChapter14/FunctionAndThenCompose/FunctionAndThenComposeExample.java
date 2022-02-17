@@ -1,7 +1,7 @@
-package ThisIsJavaChapter14.FunctionAndThenCompose;
+package thisIsJavaChapter14.functionAndThenCompose;
 
-import ThisIsJavaChapter14.ConsumerAndThen.Address;
-import ThisIsJavaChapter14.ConsumerAndThen.Member;
+import thisIsJavaChapter14.consumerAndThen.Address;
+import thisIsJavaChapter14.consumerAndThen.Member;
 
 import java.util.function.Function;
 

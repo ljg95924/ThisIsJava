@@ -1,4 +1,4 @@
-package ThisIsJavaChapter06.CheckProblem;
+package thisIsJavaChapter06.checkProblem;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package ThisIsJavaChapter12.YieldExample;
+package thisIsJavaChapter12.YieldExample;
 
 public class ThreadB extends Thread {
     public boolean work = true;

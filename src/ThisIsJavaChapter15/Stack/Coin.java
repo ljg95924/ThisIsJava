@@ -1,4 +1,4 @@
-package ThisIsJavaChapter15.Stack;
+package thisIsJavaChapter15.stack;
 
 public class Coin {
     private int value;

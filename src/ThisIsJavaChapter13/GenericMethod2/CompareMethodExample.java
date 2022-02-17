@@ -1,4 +1,4 @@
-package ThisIsJavaChapter13.GenericMethod2;
+package thisIsJavaChapter13.genericMethod2;
 
 public class CompareMethodExample {
     public static void main(String[] args) {

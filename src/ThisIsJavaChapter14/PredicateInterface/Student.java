@@ -1,4 +1,4 @@
-package ThisIsJavaChapter14.PredicateInterface;
+package thisIsJavaChapter14.predicateInterface;
 
 public class Student {
 

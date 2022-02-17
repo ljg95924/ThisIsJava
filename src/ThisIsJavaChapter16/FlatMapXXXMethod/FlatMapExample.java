@@ -1,4 +1,4 @@
-package ThisIsJavaChapter16.FlatMapXXXMethod;
+package thisIsJavaChapter16.flatMapXXXMethod;
 
 import java.util.Arrays;
 import java.util.List;

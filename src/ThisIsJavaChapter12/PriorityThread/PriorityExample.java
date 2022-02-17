@@ -1,4 +1,4 @@
-package ThisIsJavaChapter12.PriorityThread;
+package thisIsJavaChapter12.PriorityThread;
 
 public class PriorityExample {
     public static void main(String[] args) {

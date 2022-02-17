@@ -1,4 +1,4 @@
-package ThisIsJavaChapter12.ThreadState;
+package thisIsJavaChapter12.ThreadState;
 
 public class StatePrintThread extends Thread {
     private Thread targetThread;

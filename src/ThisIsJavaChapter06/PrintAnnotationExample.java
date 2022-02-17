@@ -1,6 +1,5 @@
-package ThisIsJavaChapter06;
+package thisIsJavaChapter06;
 
-import java.awt.desktop.SystemSleepEvent;
 import java.lang.reflect.Method;
 
 public class PrintAnnotationExample {

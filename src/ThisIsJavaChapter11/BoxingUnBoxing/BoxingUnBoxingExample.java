@@ -1,4 +1,4 @@
-package ThisIsJavaChapter11.BoxingUnBoxing;
+package thisIsJavaChapter11.boxingUnBoxing;
 
 public class BoxingUnBoxingExample {
     public static void main(String[] args) {

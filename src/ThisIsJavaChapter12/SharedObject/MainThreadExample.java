@@ -1,4 +1,4 @@
-package ThisIsJavaChapter12.SharedObject;
+package thisIsJavaChapter12.SharedObject;
 
 public class MainThreadExample {
     public static void main(String[] args) {

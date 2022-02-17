@@ -1,4 +1,4 @@
-package ThisIsJavaChapter16.CollectMethod;
+package thisIsJavaChapter16.collectMethod;
 
 public class Student {
     private String name;

@@ -1,6 +1,6 @@
-package ThisIsJavaChapter16.MapXXXMethod;
+package thisIsJavaChapter16.mapXXXMethod;
 
-import ThisIsJavaChapter16.LambdaExpressionsForeach.Student;
+import thisIsJavaChapter16.lambdaExpressionsForeach.Student;
 
 import java.util.Arrays;
 import java.util.List;

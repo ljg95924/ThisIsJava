@@ -1,4 +1,4 @@
-package ThisIsJavaChapter12.ObjectMethodWaitNotifyNotifyAll;
+package thisIsJavaChapter12.ObjectMethodWaitNotifyNotifyAll;
 
 public class WorkObject {
     public synchronized void methodA() {

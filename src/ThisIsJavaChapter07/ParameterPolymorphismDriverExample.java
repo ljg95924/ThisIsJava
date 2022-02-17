@@ -1,6 +1,4 @@
-package ThisIsJavaChapter07;
-
-import java.sql.Driver;
+package thisIsJavaChapter07;
 
 public class ParameterPolymorphismDriverExample {
     public static void main(String[] args) {

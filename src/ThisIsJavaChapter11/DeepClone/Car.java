@@ -1,4 +1,4 @@
-package ThisIsJavaChapter11.DeepClone;
+package thisIsJavaChapter11.deepClone;
 
 public class Car {
     public String model;

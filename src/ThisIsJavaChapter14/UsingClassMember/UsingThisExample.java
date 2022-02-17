@@ -1,4 +1,4 @@
-package ThisIsJavaChapter14.UsingClassMember;
+package thisIsJavaChapter14.usingClassMember;
 
 public class UsingThisExample {
     public static void main(String[] args) {

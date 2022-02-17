@@ -1,4 +1,4 @@
-package ThisIsJavaChapter12.DaemonThread;
+package thisIsJavaChapter12.DaemonThread;
 
 public class AutoSaveThread extends Thread {
     public void save() {

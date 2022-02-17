@@ -1,4 +1,4 @@
-package ThisIsJavaChapter07;
+package thisIsJavaChapter07;
 
 public class InstanceofExample {
     public static void method1(InstanceofParent parent) {

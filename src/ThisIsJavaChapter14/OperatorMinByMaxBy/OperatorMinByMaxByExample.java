@@ -1,4 +1,4 @@
-package ThisIsJavaChapter14.OperatorMinByMaxBy;
+package thisIsJavaChapter14.operatorMinByMaxBy;
 
 import java.util.function.BinaryOperator;
 

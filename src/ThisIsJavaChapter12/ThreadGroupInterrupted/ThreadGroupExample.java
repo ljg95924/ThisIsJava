@@ -1,4 +1,4 @@
-package ThisIsJavaChapter12.ThreadGroupInterrupted;
+package thisIsJavaChapter12.ThreadGroupInterrupted;
 
 public class ThreadGroupExample {
     public static void main(String[] args) {

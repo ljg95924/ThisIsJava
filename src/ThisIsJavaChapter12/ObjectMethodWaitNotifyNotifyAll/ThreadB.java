@@ -1,4 +1,4 @@
-package ThisIsJavaChapter12.ObjectMethodWaitNotifyNotifyAll;
+package thisIsJavaChapter12.ObjectMethodWaitNotifyNotifyAll;
 
 public class ThreadB extends Thread {
     private WorkObject workObject;

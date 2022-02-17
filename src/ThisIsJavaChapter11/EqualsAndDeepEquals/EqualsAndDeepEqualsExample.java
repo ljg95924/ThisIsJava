@@ -1,4 +1,4 @@
-package ThisIsJavaChapter11.EqualsAndDeepEquals;
+package thisIsJavaChapter11.equalsAndDeepEquals;
 
 import java.util.Arrays;
 import java.util.Objects;

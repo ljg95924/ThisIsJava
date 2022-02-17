@@ -1,4 +1,4 @@
-package ThisIsJavaChapter12.SharedObject;
+package thisIsJavaChapter12.SharedObject;
 
 public class User2 extends Thread {
     private Calculator calculator;
